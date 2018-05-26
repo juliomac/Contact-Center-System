@@ -13,7 +13,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Drawer_List from './drawer_list';
-
+import LiveChat from '../screens/liveChat'
 
 const drawerWidth = 240;
 
@@ -77,7 +77,8 @@ const styles = theme => ({
     content: {
         flexGrow: 1,
         backgroundColor: theme.palette.background.default,
-        padding: theme.spacing.unit * 3,
+       // padding: theme.spacing.unit * 3,
+        padding:0,
     },
 });
 
@@ -138,7 +139,7 @@ class MiniDrawer extends React.Component {
                 </Drawer>
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <DashBoard/>
+                    <LiveChat/>
                 </main>
             </div>
         );
