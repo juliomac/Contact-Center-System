@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import DashBoard from '../screens/dashboard'
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
@@ -14,6 +14,10 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Drawer_List from './drawer_list';
 import LiveChat from '../screens/liveChat'
+import NotificationList from '../screens/notification'
+import {connect} from 'react-redux'
+import Setting from '../screens/setting'
+import DashBoard from '../screens/dashboard'
 
 const drawerWidth = 240;
 
@@ -80,6 +84,11 @@ const styles = theme => ({
        // padding: theme.spacing.unit * 3,
         padding:0,
     },
+    menuButton: {
+        marginLeft: 12,
+        marginRight: 20,
+    },
+
 });
 
 
@@ -96,10 +105,25 @@ class MiniDrawer extends React.Component {
     handleDrawerClose = () => {
         this.setState({ open: false });
     };
+    renderScreen(index){
+        localStorage.setItem('initIndex',index)
+        switch (index){
+            case 1:
+                return <DashBoard/>
+            case 2:
+                return <LiveChat/>
+            case 3:
+                return <NotificationList/>
+            case 4:
+                return <Setting/>
+            default:
+                return <DashBoard/>
+        }
+    }
 
     render() {
-        const { classes, theme } = this.props;
-
+        const { classes, theme,switch_component } = this.props;
+        console.log(switch_component)
         return (
             <div className={classes.root}>
                 <AppBar
@@ -139,7 +163,7 @@ class MiniDrawer extends React.Component {
                 </Drawer>
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <LiveChat/>
+                    {this.renderScreen(switch_component)}
                 </main>
             </div>
         );
@@ -151,4 +175,10 @@ MiniDrawer.propTypes = {
     theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(MiniDrawer);
+const mapStateToProps =state=>{
+    return {
+        switch_component:state.switch_component
+    }
+}
+
+export default connect(mapStateToProps)(withStyles(styles, { withTheme: true })(MiniDrawer));

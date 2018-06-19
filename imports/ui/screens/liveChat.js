@@ -4,9 +4,10 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
-import CustomerDrawerList from '../components/customer_drawer_list';
 import { Scrollbars } from 'react-custom-scrollbars';
-import ListChatUser from '../components/list_chat_users'
+import InputMessage from '../components/input_message'
+import MessagesList from '../components/messages_list'
+import ListUser from '../components/livechat_users_list'
 
 const drawerWidth = 240;
 
@@ -89,14 +90,6 @@ class LiveChat extends React.Component {
         this.setState({ open: false });
     };
 
-
-
-
-
-
-
-
-
     render() {
         const { classes, theme } = this.props;
 
@@ -110,14 +103,17 @@ class LiveChat extends React.Component {
                         }}
                         open={this.state.open}
                     >
-                        <CustomerDrawerList/>
+                        <ListUser/>
                         <Divider />
                     </Drawer>
                 </Scrollbars>
 
                 <Scrollbars>
                     <main className={classes.content}>
-                        <ListChatUser/>
+                        <div>
+                            <MessagesList/>
+                            <InputMessage/>
+                        </div>
                     </main>
                 </Scrollbars>
 

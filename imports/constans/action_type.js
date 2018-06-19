@@ -1,0 +1,1 @@
+export const SWITCH_COMPONENT = "SWITCH_COMPONENT"

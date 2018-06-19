@@ -6,15 +6,10 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
-import AutoReplyCard from '../components/auto_reply_card'
 
 const styles = {
-    root:{
-      margin:'5%'
-    },
     card: {
         minWidth: 275,
     },
@@ -31,27 +26,41 @@ const styles = {
         marginBottom: 12,
     },
 };
+state = {
+    open: false,
+};
 
-function Setting(props) {
+handleClickOpen = () => {
+    this.setState({ open: true });
+};
+
+handleClose = () => {
+    this.setState({ open: false });
+};
+function AutoReplyCard(props) {
     const { classes } = props;
     const bull = <span className={classes.bullet}>•</span>;
-
+    const {open} = this.state
     return (
-        <div>
-            <div className={classes.root}>
-                <Grid container spacing={24}>
-                    <Grid item xs={3}>
-                        <AutoReplyCard/>
-                    </Grid>
-                </Grid>
-            </div>
-
-        </div>
+        <Card className={classes.card}>
+            <CardContent>
+                <Typography className={classes.title} color="textSecondary">
+                    Auto Reply Percentages Setting
+                </Typography>
+                <Progress
+                    type="circle"
+                    percent={30}
+                />
+            </CardContent>
+            <CardActions>
+                <Button onClick={this.handleClickOpen} open={open}>Open alert dialog</Button>
+            </CardActions>
+        </Card>
     );
 }
 
-Setting.propTypes = {
+AutoReplyCard.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Setting);
+export default withStyles(styles)(AutoReplyCard);
