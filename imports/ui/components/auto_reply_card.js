@@ -34,6 +34,7 @@ const styles = {
 const initialState={
     open:false,
     percent:80,
+    id_setting:''
 }
 class AutoReplyCard extends React.Component {
 
@@ -48,9 +49,9 @@ class AutoReplyCard extends React.Component {
     setSetting(){
         Tracker.autorun(()=>{
             const setting = Setting.findOne()
-            const {percentage_reply} = setting
+            const {percentage_reply,_id} = setting
             if(percentage_reply){
-                this.setState({percent:percentage_reply})
+                this.setState({percent:percentage_reply,id_setting:_id})
             }
 
         })
@@ -71,6 +72,8 @@ class AutoReplyCard extends React.Component {
     }
     onSave = () => {
         this.setState({ open: false });
+        const {percent,id_setting} = this.state
+        Meteor.call('updatePercentage',id_setting,percent)
     };
 
     render() {
