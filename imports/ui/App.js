@@ -4,6 +4,9 @@ import MiniDrawer from './components/drawer'
 import {MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import {Provider} from 'react-redux'
 import store from '../store'
+import {test} from "../../lib/Database";
+import {Meteor} from 'meteor/meteor'
+
 const theme = createMuiTheme({
     palette: {
         primary: {
@@ -21,9 +24,18 @@ const theme = createMuiTheme({
     },
 });
 
-
 export default class App extends Component {
+    change(){
+        Tracker.autorun(() => {
+            console.log(test.find().fetch())
 
+        });
+    }
+    componentWillMount(){
+        Meteor.subscribe('chat',function (e) {
+            this.change()
+        }.bind(this))
+    }
     render() {
         return (
             <Provider store={store}>

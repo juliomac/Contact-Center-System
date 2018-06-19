@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
-import '../lib/tasks.js';
+import '../lib/Database.js';
 import App from '../imports/ui/App.js';
 
 Meteor.startup(() => {
