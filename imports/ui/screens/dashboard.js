@@ -37,10 +37,10 @@ function Setting(props) {
         <div>
             <div className={classes.root}>
                 <Grid container spacing={24}>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3} style={{maxWidth:600}}>
                         <DashboardLiveChat/>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3} style={{maxWidth:600}}>
                         <DashboardNotifcation/>
                     </Grid>
                 </Grid>

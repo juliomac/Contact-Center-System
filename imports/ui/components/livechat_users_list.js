@@ -38,11 +38,6 @@ class ListUser extends React.Component {
     state ={
         data,
     }
-    clickUser(e){
-        console.log(e.then(res=>{
-            console.log()
-        }));
-    }
 
     itemList(e){
         console.log("Hello");
@@ -67,12 +62,12 @@ class ListUser extends React.Component {
         this.setState({data:data})
     }
     render() {
-        const {classes} = this.props;
+        const {classes,onUserChange} = this.props;
         const {data} = this.state
         return <div className={classes.root1}>
 
             <ChatList
-                onClick={(e)=>this.itemList(e)}
+                onClick={(e)=>{this.itemList(e);onUserChange(e)}}
                 className='chat-list'
                 dataSource={data} />
         </div>;
