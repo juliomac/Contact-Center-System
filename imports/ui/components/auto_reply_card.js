@@ -10,6 +10,9 @@ import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 import SetAutoReply from '../components/set_auto_reply'
 import './css/auto_reply_card.css'
+import {Meteor} from 'meteor/meteor'
+import {Tracker} from 'meteor/tracker'
+import {Setting} from "../../../lib/Database";
 
 const styles = {
     card: {
@@ -37,7 +40,25 @@ class AutoReplyCard extends React.Component {
     constructor(props) {
         super(props)
         this.state = initialState;
+        Meteor.subscribe('setting',function () {
+            this.setSetting()
+        }.bind(this))
     }
+
+    setSetting(){
+        Tracker.autorun(()=>{
+            const setting = Setting.findOne()
+            const {percentage_reply} = setting
+            if(percentage_reply){
+                this.setState({percent:percentage_reply})
+            }
+
+        })
+    }
+
+
+
+
     handleClickOpen = () => {
         this.setState({ open: true });
     };

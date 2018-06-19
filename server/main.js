@@ -6,6 +6,9 @@ Meteor.startup(() => {
     Meteor.publish('chat', function () {
         return test.find()
     });
+    Meteor.publish('setting', function () {
+        return test.find()
+    });
 });
 
 

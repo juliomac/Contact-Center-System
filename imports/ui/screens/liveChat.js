@@ -8,6 +8,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import InputMessage from '../components/input_message'
 import MessagesList from '../components/messages_list'
 import ListUser from '../components/livechat_users_list'
+import {message_list} from '../../data/message_list_test_data';
 
 const drawerWidth = 240;
 
@@ -80,6 +81,8 @@ const styles = theme => ({
 class LiveChat extends React.Component {
     state = {
         open: false,
+        list_user:'',
+        message_list:message_list,
     };
 
     handleDrawerOpen = () => {
@@ -89,6 +92,21 @@ class LiveChat extends React.Component {
     handleDrawerClose = () => {
         this.setState({ open: false });
     };
+
+    onUserChange(e){
+        console.log("on user change")
+        console.log(e)
+        //Query list message of this selected user
+        //==> update message_list state ===> to change message list component
+        message_list[0]={
+            position: 'right',
+            type: 'text',
+            text: 'Hello, I am Mom.  '+e.id,
+            date: new Date(),
+        }
+        this.setState({message_list:message_list});
+    }
+
 
     render() {
         const { classes, theme } = this.props;
@@ -103,7 +121,7 @@ class LiveChat extends React.Component {
                         }}
                         open={this.state.open}
                     >
-                        <ListUser/>
+                        <ListUser onUserChange={(e)=>this.onUserChange(e)}/>
                         <Divider />
                     </Drawer>
                 </Scrollbars>
@@ -111,7 +129,7 @@ class LiveChat extends React.Component {
                 <Scrollbars>
                     <main className={classes.content}>
                         <div>
-                            <MessagesList/>
+                            <MessagesList message_list={message_list}/>
                             <InputMessage/>
                         </div>
                     </main>

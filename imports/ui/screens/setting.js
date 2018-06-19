@@ -10,7 +10,6 @@ import Grid from '@material-ui/core/Grid';
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 import AutoReplyCard from '../components/auto_reply_card'
-
 const styles = {
     root:{
       margin:'5%'
@@ -40,7 +39,7 @@ function Setting(props) {
         <div>
             <div className={classes.root}>
                 <Grid container spacing={24}>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3} style={{maxWidth:600}}>
                         <AutoReplyCard/>
                     </Grid>
                 </Grid>

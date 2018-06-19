@@ -21,7 +21,7 @@ const styles = theme => ({
 
     },
     colorPrimary:{
-        backgroundColor:'#d8e9ef !important',
+        backgroundColor:'rgb(30, 192, 255) !important',
     },
     navDrawer:{
         paddingTop: 0,
