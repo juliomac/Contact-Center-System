@@ -13,6 +13,13 @@ Meteor.startup(() => {
     });
 });
 
+Meteor.methods({
+    'updatePercentage'(id,percentage) {
+       Setting.update({_id:id},{percentage_reply:percentage})
+        return true
+    }
+});
+
 
 
 
