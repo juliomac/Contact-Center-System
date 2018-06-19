@@ -30,11 +30,11 @@ export default class App extends Component {
     change(){
         Tracker.autorun(() => {
             console.log(test.find().fetch())
-
         });
     }
     componentWillMount(){
         Meteor.subscribe('chat',function (e) {
+
             this.change()
         }.bind(this))
     }
