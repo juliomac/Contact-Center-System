@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import {test} from "../lib/Database";
+import {Setting} from "../lib/Database";
+
 Meteor.startup(() => {
   // code to run on server at startup
     // Server: Publish the `Rooms` collection, minus secret info...
@@ -7,7 +9,7 @@ Meteor.startup(() => {
         return test.find()
     });
     Meteor.publish('setting', function () {
-        return test.find()
+        return Setting.find()
     });
 });
 
