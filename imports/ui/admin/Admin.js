@@ -26,9 +26,7 @@ export default class Admin extends Component {
         return (
             <Provider store={store}>
                 <MuiThemeProvider theme={theme}>
-                    <div>
                         <MiniDrawer/>
-                    </div>
                 </MuiThemeProvider>
             </Provider>
         );

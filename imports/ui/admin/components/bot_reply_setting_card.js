@@ -8,11 +8,11 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
-import BotReplyModal from '../components/bot_reply_modal'
+import BotReplyModal from './bot_reply_modal'
 import './css/auto_reply_card.css'
 import {Meteor} from 'meteor/meteor'
 import {Tracker} from 'meteor/tracker'
-import {Setting} from "../../../lib/Database";
+import {Setting} from "../../../../lib/Database";
 
 const styles = {
     card: {

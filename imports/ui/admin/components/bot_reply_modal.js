@@ -77,7 +77,7 @@ class SetAutoReply extends React.Component {
                         <Button onClick={()=>onClose()} color="primary">
                             Cancel
                         </Button>
-                        <Button onClick={(auto_reply)=>{onSave(auto_reply),onClose()}} color="primary" autoFocus>
+                        <Button onClick={()=>{onSave(auto_reply),onClose()}} color="primary" autoFocus>
                             Save
                         </Button>
                     </DialogActions>

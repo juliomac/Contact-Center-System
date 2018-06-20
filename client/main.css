@@ -1,6 +1,7 @@
 /* CSS declarations go here */
 body {
     font-family: sans-serif;
-
+    padding: 0 !important;
+    margin: 0 !important;
     font-size: 14px;
 }
