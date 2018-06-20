@@ -11,7 +11,7 @@ import DeveloperBoard from '@material-ui/icons/DeveloperBoard';
 import TrackChanges from '@material-ui/icons/TrackChanges';
 import Badge from '@material-ui/core/Badge';
 import {connect} from 'react-redux'
-import {switchComponent} from "../../action";
+import {switchComponent} from "../../../action/index";
 
 const styles = theme => ({
     root: {

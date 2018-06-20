@@ -8,7 +8,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import InputMessage from '../components/input_message'
 import MessagesList from '../components/messages_list'
 import ListUser from '../components/livechat_users_list'
-import {message_list} from '../../data/message_list_test_data';
+import {message_list} from '../../../data/message_list_test_data';
 
 const drawerWidth = 240;
 

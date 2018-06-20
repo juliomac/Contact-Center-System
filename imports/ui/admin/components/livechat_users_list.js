@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import 'react-chat-elements/dist/main.css';
 import { ChatList } from 'react-chat-elements'
 import './css/livechat_users_list.css';
-import {data} from "../../data";
+import {data} from "../../../data";
 
 const styles = theme => ({
     root1: {
