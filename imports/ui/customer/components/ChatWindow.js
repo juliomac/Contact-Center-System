@@ -7,8 +7,8 @@ import  RegistrationForm from './loginForm'
 import {Tracker} from 'meteor/tracker'
 import {Accounts} from "meteor/accounts-base";
 import {Random} from 'meteor/random'
-import {ChatRooms} from '../../../lib/Database'
-//Meteor.subscribe('ChatRooms')
+//import {ChatRoom} from "../../../../lib/Database";
+
 let Users = Meteor.subscribe('Users');
 
 Meteor.subscribe('userStatus');
@@ -34,7 +34,7 @@ class ChatWindow extends Component {
 
     retrieveMessage(){
         Tracker.autorun(()=>{
-            const chat_room = ChatRooms.findOne({user_id:Meteor.userId()})
+            const chat_room = ChatRoom.findOne({user_id:Meteor.userId()})
             if(chat_room) {
                 const {message_user} = chat_room
                 if (message_user.length)
@@ -49,7 +49,7 @@ class ChatWindow extends Component {
         let user_id=Meteor.userId();
         message["sender_id"] = user_id
         message["createdAt"] = new Date()
-        ChatRooms.update({_id:getChatRoomId(user_id)},
+        ChatRoom.update({_id:getChatRoomId(user_id)},
            {$addToSet:{message_user:message}});
 
 
@@ -113,7 +113,7 @@ class ChatWindow extends Component {
                     );
                 }
             }
-            
+
         )
 
 
@@ -129,7 +129,6 @@ class ChatWindow extends Component {
     }
     render() {
         const {isLogin} = this.state;
-        let messageList = this.props.messageList || [];
         let classList = [
             "sc-chat-window",
             (this.props.isOpen ? "opened" : "closed")
@@ -178,7 +177,7 @@ class ChatWindow extends Component {
 export default ChatWindow;
 export const CreateChatRooms =(chatRoomId,user_id)=>
 {
-    ChatRooms.insert({_id:chatRoomId,user_id,message_user:[]});
+    ChatRoom.insert({_id:chatRoomId,user_id,message_user:[]});
 };
 export const getChatRoomId=(user_id)=>
 {

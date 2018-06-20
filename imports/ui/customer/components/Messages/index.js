@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import TextMessage from './TextMessage'
-import ChatRooms from '../../../../lib/Database'
 
 class Message extends Component {
 

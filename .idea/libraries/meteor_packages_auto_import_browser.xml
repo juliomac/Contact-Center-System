@@ -31,6 +31,10 @@
         <item url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.4.1/web.browser/login_buttons_dropdown.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.4.1/web.browser/login_buttons_session.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.4.1/web.browser/login_buttons_single.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.16/web.browser/client/debug.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.16/web.browser/client/subscriptions.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.16/web.browser/client/uiHelpers.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.16/web.browser/roles_common.js" />
         <item url="file://$USER_HOME$/.meteor/packages/allow-deny/1.1.0/web.browser/allow-deny-tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/allow-deny/1.1.0/web.browser/allow-deny.js" />
         <item url="file://$USER_HOME$/.meteor/packages/autoupdate/1.4.0/web.browser/autoupdate_client.js" />
@@ -249,6 +253,10 @@
       <root url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.4.1/web.browser/login_buttons_dropdown.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.4.1/web.browser/login_buttons_session.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.4.1/web.browser/login_buttons_single.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.16/web.browser/client/debug.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.16/web.browser/client/subscriptions.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.16/web.browser/client/uiHelpers.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.16/web.browser/roles_common.js" />
       <root url="file://$USER_HOME$/.meteor/packages/allow-deny/1.1.0/web.browser/allow-deny-tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/allow-deny/1.1.0/web.browser/allow-deny.js" />
       <root url="file://$USER_HOME$/.meteor/packages/autoupdate/1.4.0/web.browser/autoupdate_client.js" />

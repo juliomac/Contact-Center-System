@@ -1,6 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Accounts } from 'meteor/accounts-base'
 
 class RegistrationForm extends React.Component {
     state= {
@@ -20,22 +18,7 @@ class RegistrationForm extends React.Component {
         {
 
         }
-
-
     }
-  /*  _accountExist(email)
-    {
-        Accounts.validateNewUser(function (user) {
-            var user_email=user.email[0].address;
-            var user_exist=Meteor.users.findOne({'email':user_email});
-            if(user_exist)
-            {
-                console.log('Already exist email');
-            }
-            
-        })
-        return email;
-    }*/
   handleSubmit=(event)=>
   {
 
