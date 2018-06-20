@@ -33,7 +33,8 @@ const styles = {
 };
 const initialState={
     open:false,
-    percent:80,
+    pre_percentage:0,
+    percent:0,
     id_setting:''
 }
 class AutoReplyCard extends React.Component {
@@ -41,6 +42,8 @@ class AutoReplyCard extends React.Component {
     constructor(props) {
         super(props)
         this.state = initialState;
+    }
+    componentWillMount(){
         Meteor.subscribe('setting',function () {
             this.setSetting()
         }.bind(this))
@@ -51,7 +54,7 @@ class AutoReplyCard extends React.Component {
             const setting = Setting.findOne()
             const {percentage_reply,_id} = setting
             if(percentage_reply){
-                this.setState({percent:percentage_reply,id_setting:_id})
+                this.setState({percent:percentage_reply,id_setting:_id,pre_percentage:percentage_reply})
             }
 
         })
@@ -78,7 +81,7 @@ class AutoReplyCard extends React.Component {
 
     render() {
         const { classes } = this.props;
-        const {open,percent} = this.state
+        const {open,percent,pre_percentage} = this.state
         return (
             <div className={classes.root}>
                 <Card className={classes.card}>
@@ -95,8 +98,9 @@ class AutoReplyCard extends React.Component {
                         <Button onClick={this.handleClickOpen}>Edit</Button>
                     </CardActions>
                 </Card>
-                <SetAutoReply open={open} onClose={()=>this.setState({open:false})} percent={percent}
-                              onInClick={()=>this.onInClick()} onDecClick={()=>this.onDecClick()} onSave={()=>this.onSave()}/>
+                <SetAutoReply open={open} onClose={()=>this.setState({open:false,percent:pre_percentage})} percent={percent}
+                              onInClick={()=>this.onInClick()} onDecClick={()=>this.onDecClick()}
+                              onSave={()=>this.onSave()} onSaveClose={()=>this.setState({open:false})}/>
             </div>
         )
     }

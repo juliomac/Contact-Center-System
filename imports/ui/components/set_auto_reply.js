@@ -32,7 +32,7 @@ class SetAutoReply extends React.Component {
 
 
     render() {
-        const {open,onClose,onSave,onDecClick,onInClick,percent} = this.props
+        const {open,onClose,onSaveClose,onSave,onDecClick,onInClick,percent} = this.props
         return (
             <div>
                 <Dialog
@@ -66,7 +66,7 @@ class SetAutoReply extends React.Component {
                         <Button onClick={()=>onClose()} color="primary">
                             Cancel
                         </Button>
-                        <Button onClick={()=>{onClose();onSave()}} color="primary" autoFocus>
+                        <Button onClick={()=>{onSaveClose();onSave()}} color="primary" autoFocus>
                             Save
                         </Button>
                     </DialogActions>
