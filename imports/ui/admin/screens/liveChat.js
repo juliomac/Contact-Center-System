@@ -9,9 +9,11 @@ import InputMessage from '../components/input_message'
 import MessagesList from '../components/messages_list'
 import ListUser from '../components/livechat_users_list'
 import {message_list} from '../../../data/message_list_test_data';
-
+import {ChatRoom} from "../../../../lib/Database";
+import {Meteor} from 'meteor/meteor'
+import {Tracker} from 'meteor/tracker'
 const drawerWidth = 240;
-
+Meteor.subscribe('ChatRooms')
 const styles = theme => ({
     root: {
         flexGrow: 1,
@@ -82,7 +84,8 @@ class LiveChat extends React.Component {
     state = {
         open: false,
         list_user:'',
-        message_list:message_list,
+        message_list:[],
+        chat_room_id:""
     };
 
     handleDrawerOpen = () => {
@@ -93,24 +96,35 @@ class LiveChat extends React.Component {
         this.setState({ open: false });
     };
 
+
     onUserChange(e){
-        console.log("on user change")
-        console.log(e)
-        //Query list message of this selected user
-        //==> update message_list state ===> to change message list component
-        message_list[0]={
-            position: 'right',
-            type: 'text',
-            text: 'Hello, I am Mom.  '+e.id,
-            date: new Date(),
-        }
-        this.setState({message_list:message_list});
+        this.setState({chat_room_id:e.chat_room_id})
+        Tracker.autorun(()=>{
+            const message =ChatRoom.findOne({_id:e.chat_room_id})
+            this.formatMessage(message.message_user)
+        })
+
+
+        //this.setState({message_list:message_list});
+    }
+    formatMessage(message_list){
+        let data=[]
+        //console.log(message_list)
+        message_list.forEach((item,index)=>{
+            data[index] = {
+                position:item.author === "me"?"left":"right",
+                type:item.type,
+                text:item.data.text,
+                date: new Date()
+            }
+        })
+       this.setState({message_list:data})
     }
 
 
     render() {
         const { classes, theme } = this.props;
-
+        const {message_list,chat_room_id} = this.state
         return (
             <div className={classes.root} style={{overflow:'unset'}}>
                 <Scrollbars style={{ width: '30%'}}>
@@ -130,7 +144,7 @@ class LiveChat extends React.Component {
                     <main className={classes.content}>
                         <div>
                             <MessagesList message_list={message_list}/>
-                            <InputMessage/>
+                            <InputMessage chat_room_id={chat_room_id}/>
                         </div>
                     </main>
                 </Scrollbars>

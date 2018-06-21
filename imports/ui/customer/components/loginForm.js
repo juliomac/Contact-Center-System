@@ -38,7 +38,7 @@ class RegistrationForm extends React.Component {
             <div className="container">
                     <div className="col-50">
                         <h3>Welcome to our Live Chat</h3>
-                        <label for="email">Email</label>
+                        <label htmlFor="email">Email</label>
                         <input type="text" id="email" name="email" onChange={(e)=>
                             this.setState({email:e.target.value})}	placeholder="someone@example.com"/>
                         <label>Click on Start Chat to start chatting</label>

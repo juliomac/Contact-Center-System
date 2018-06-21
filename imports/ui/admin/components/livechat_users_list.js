@@ -5,7 +5,8 @@ import 'react-chat-elements/dist/main.css';
 import { ChatList } from 'react-chat-elements'
 import './css/livechat_users_list.css';
 import {data} from "../../../data";
-
+import {Meteor} from 'meteor/meteor'
+import {Tracker} from 'meteor/tracker'
 const styles = theme => ({
     root1: {
         width: '100%',
@@ -37,21 +38,50 @@ const styles = theme => ({
 class ListUser extends React.Component {
     state ={
         data,
+        user_list:[]
+    }
+    getInfoUserOnline(){
+        Tracker.autorun(()=>{
+            const user_list =  Meteor.users.find({ "status.online": true },
+                {fields:{_id:1,"emails":1,username:1,"profile.chatRoomId":1}}).fetch()
+            console.log(user_list)
+            this.formatField(user_list)
+        })
+    }
+    formatField(userList){
+        let data = []
+        userList.map((item,index)=>{
+            data[index]={
+                id:item._id,
+                chat_room_id:item.profile.chatRoomId,
+                title:item.username,
+                className:'',
+                unread:0,
+                avatar: 'https://ui-avatars.com/api/?name='+item.username[0]+'&background=4e8cff&color=fff',
+                alt: 'Reactjs',
+            }
+        })
+        console.log(data)
+        this.setState({user_list:data})
+    }
+    componentWillMount(){
+        Meteor.subscribe('userStatus',function () {
+            this.getInfoUserOnline()
+        }.bind(this))
     }
 
     itemList(e){
-        console.log("Hello");
-        console.log(e);
-        console.log(data)
+        const {user_list} = this.state
+        let temp=user_list
         var be_break=0;
-        for (var i = 0; i < data.length; i++) {
-            if (data[i].id === e.id) {
-                data[i].className = "selected";
+        for (var i = 0; i < temp.length; i++) {
+            if (temp[i].id === e.id) {
+                temp[i].className = "selected";
                 be_break++;
             }
             else{
-                if(data[i].className=="selected"){
-                    data[i].className="";
+                if(temp[i].className=="selected"){
+                    temp[i].className="";
                     be_break++;
                 }
             }
@@ -59,17 +89,17 @@ class ListUser extends React.Component {
                 break;
             }
         }
-        this.setState({data:data})
+        this.setState({user_list:temp})
     }
     render() {
         const {classes,onUserChange} = this.props;
-        const {data} = this.state
+        const {user_list} = this.state
         return <div className={classes.root1}>
 
             <ChatList
                 onClick={(e)=>{this.itemList(e);onUserChange(e)}}
                 className='chat-list'
-                dataSource={data} />
+                dataSource={user_list} />
         </div>;
     }
 }

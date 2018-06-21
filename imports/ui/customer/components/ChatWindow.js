@@ -7,16 +7,12 @@ import  RegistrationForm from './loginForm'
 import {Tracker} from 'meteor/tracker'
 import {Accounts} from "meteor/accounts-base";
 import {Random} from 'meteor/random'
-//import {ChatRoom} from "../../../../lib/Database";
-
+import {ChatRoom} from "../../../../lib/Database";
+import {createAccount,getChatRoomId} from "../../../init";
 let Users = Meteor.subscribe('Users');
 
 Meteor.subscribe('userStatus');
 let message_user =Meteor.subscribe("user_message");
-
-
-
-
 
 class ChatWindow extends Component {
     constructor(props) {
@@ -31,7 +27,6 @@ class ChatWindow extends Component {
             ]
         }
     }
-
     retrieveMessage(){
         Tracker.autorun(()=>{
             const chat_room = ChatRoom.findOne({user_id:Meteor.userId()})
@@ -49,8 +44,7 @@ class ChatWindow extends Component {
         let user_id=Meteor.userId();
         message["sender_id"] = user_id
         message["createdAt"] = new Date()
-        ChatRoom.update({_id:getChatRoomId(user_id)},
-           {$addToSet:{message_user:message}});
+        Meteor.call('insertMessage',getChatRoomId(user_id),message)
 
 
     }
@@ -70,53 +64,17 @@ class ChatWindow extends Component {
             chatRoomId
         }
         Meteor.call('check_existed',email,function (error,result) {
-                console.log(result);
-
-
                 if(result){
                     Meteor.loginWithPassword(email,email,function (error) {
                         if(error){
                             console.log("login error")
                         }
-                        else {
-                          //  this.setState({message_list:ChatRooms.find({user_id:Meteor.userId()}).fetch()})
-                        }
                     })
                 }else{
-                    Accounts.createUser(
-                        {
-                            userName:userName,
-                            email:email,
-                            password:password,
-                            profile: profile
-                        },function (e)
-                            {
-                             if(e)
-                             {
-                                 console.log(e);
-                             }
-                             else
-                             {
-                               var user_id=Meteor.userId();
-                               Meteor.call('updateRoles',[user_id,['user']],function (e) {
-                                    if(e)
-                                    {
-                                        console.log(e)
-                                    }
-                                    else {
-                                        CreateChatRooms(chatRoomId,user_id);
-                                    }
-                               })
-                             }
-                            }
-
-                    );
+                    createAccount(email,password,profile)
                 }
             }
-
         )
-
-
     }
     componentWillMount()
     {
@@ -133,7 +91,6 @@ class ChatWindow extends Component {
             "sc-chat-window",
             (this.props.isOpen ? "opened" : "closed")
         ];
-       console.log(this.state.message_list)
         return (
 
             <div className={classList.join(' ')}>
@@ -175,13 +132,4 @@ class ChatWindow extends Component {
 }
 
 export default ChatWindow;
-export const CreateChatRooms =(chatRoomId,user_id)=>
-{
-    ChatRoom.insert({_id:chatRoomId,user_id,message_user:[]});
-};
-export const getChatRoomId=(user_id)=>
-{
-    const user = Meteor.users.findOne({_id:user_id});
-    const chatRoomId = user.profile.chatRoomId;
-    return chatRoomId
-};
+
