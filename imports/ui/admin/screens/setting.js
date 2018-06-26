@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 import AutoReplyCard from '../components/auto_reply_card'
+import BotAutoReplyCard from '../components/bot_reply_setting_card'
 const styles = {
     root:{
       margin:'5%'
@@ -41,6 +37,9 @@ function Setting(props) {
                 <Grid container spacing={24}>
                     <Grid item xs={12} sm={3} style={{maxWidth:600}}>
                         <AutoReplyCard/>
+                    </Grid>
+                    <Grid item xs={12} sm={3} style={{maxWidth:600}}>
+                        <BotAutoReplyCard/>
                     </Grid>
                 </Grid>
             </div>

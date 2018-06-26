@@ -46,6 +46,17 @@ Meteor.methods({
     'updatePercentage'(id,percentage) {
         Setting.update({_id:id},{$set:{percentage_reply:percentage}})
         return true
+<<<<<<< HEAD
+    }
+});
+Meteor.methods({
+    'updateBotReplyStatus'(id,auto_reply) {
+        console.log("Auto: "+auto_reply)
+        Setting.update({_id:id},{$set:{auto_reply:auto_reply}})
+        return true
+    }
+=======
     },
 
+>>>>>>> a9c59c391818ef6fa5c1d1a3ba11567e8f01a175
 });
