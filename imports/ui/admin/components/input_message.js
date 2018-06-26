@@ -6,6 +6,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/Input';
 import Send from '@material-ui/icons/Send';
 import IconButton from '@material-ui/core/IconButton';
+import {Meteor} from 'meteor/meteor'
 const styles = theme => ({
     root1: {
         backgroundColor: theme.palette.background.paper,
@@ -33,34 +34,56 @@ const styles = theme => ({
 class InputMessage extends React.Component {
     state = {
         multiline: 'Controlled',
+        message:""
     };
 
     handleChange = name => event => {
         this.setState({
-            [name]: event.target.value,
+            message: event.target.value,
         });
     };
+    submitReply(){
+        const {chat_room_id} = this.props
+        let message_reply ={
+            author:"them",
+            type:"text",
+
+            data:{
+                text:this.state.message,
+
+            },
+            sender_id:"bot",
+            createdAt:new Date()
+        }
+
+        Meteor.call('replyMessage',message_reply,chat_room_id)
+        this.setState({message:""})
+    }
 
 
     render() {
         const {classes} = this.props;
+        const {message} = this.state
         return <div className={classes.root1}>
+            <form>
             <TextField
                 id="multiline-flexible"
                 disableUnderline={true}
                 multiline
                 rows="2"
                 placeholder="Type your message..."
+                value={message}
                 className={classes.input}
                 onChange={this.handleChange('multiline')}
                 endAdornment={
                     <InputAdornment position="end">
-                        <IconButton className={classes.button} aria-label="Delete">
+                        <IconButton onClick={()=>this.submitReply()} className={classes.button} aria-label="Delete">
                             <Send />
                         </IconButton>
                     </InputAdornment>
                 }
             />
+            </form>
         </div>;
     }
 }

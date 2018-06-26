@@ -57,6 +57,7 @@ input[type=text] {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    font-size: 14px;
 }
 
 label {
@@ -82,7 +83,6 @@ label {
     font-size: 17px;
     position:absolute;
     transition: .5s ease;
-    top: 50%;
     left: 10%;
 
 

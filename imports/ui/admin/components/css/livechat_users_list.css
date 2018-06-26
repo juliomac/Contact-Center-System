@@ -1,3 +1,10 @@
 .selected .rce-citem-avatar, .selected .rce-citem-body{
     background-color: #fafafa;
 }
+
+.rce-citem-body--top-time{
+    position: absolute;
+    bottom:5px;
+    right: 5px;
+
+}

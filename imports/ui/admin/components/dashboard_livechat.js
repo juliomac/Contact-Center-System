@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 import './css/auto_reply_card.css'
-
+import {Tracker} from 'meteor/tracker'
 const styles = {
     card: {
         minWidth: 275,
@@ -27,6 +27,7 @@ const styles = {
 };
 const initialState={
     percent:80,
+    user_online:0
 }
 class AutoReplyCard extends React.Component {
 
@@ -34,10 +35,21 @@ class AutoReplyCard extends React.Component {
         super(props)
         this.state = initialState;
     }
+    getCountUserOnline(){
+        Tracker.autorun(()=>{
+            const count = Meteor.users.find({ "status.online": true }).count();
+            this.setState({user_online:count})
+        })
+    }
+    componentWillMount(){
+        Meteor.subscribe('userStatus',function () {
+            this.getCountUserOnline()
+        }.bind(this))
+    }
 
     render() {
         const { classes } = this.props;
-        const {percent} = this.state
+        const {user_online} = this.state
         return (
             <div className={classes.root}>
                 <Card className={classes.card}>
@@ -51,7 +63,7 @@ class AutoReplyCard extends React.Component {
                             status="error"
                             theme={{
                                 error: {
-                                    symbol: [percent,<br/>,<span style={{fontSize:15,marginLeft:10,color:'#1ec0ff'}}>active</span>],
+                                    symbol: [user_online,<br/>,<span style={{fontSize:15,marginLeft:10,color:'#1ec0ff'}}>active</span>],
                                     color: '#47b8e0'
                                 }
                             }}

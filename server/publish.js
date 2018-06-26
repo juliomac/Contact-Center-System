@@ -11,7 +11,7 @@ Meteor.startup(() => {
     });
 
     Meteor.publish("userStatus", function() {
-        return Meteor.users.find({ "status.online": true });
+        return Meteor.users.find({ "status.online": true },{fields:{_id:1,"profile.chatRoomId":1}});
     });
     Meteor.publish("ChatRooms",function () {
         return ChatRoom.find();

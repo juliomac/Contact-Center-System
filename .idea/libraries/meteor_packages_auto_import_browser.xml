@@ -137,6 +137,8 @@
         <item url="file://$USER_HOME$/.meteor/packages/minifier-css/1.3.1/web.browser/minifier-tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/minifier-css/1.3.1/web.browser/minifier.js" />
         <item url="file://$USER_HOME$/.meteor/packages/minifier-css/1.3.1/web.browser/urlrewriting-tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/mizzao_timesync/0.3.4/web.browser/timesync-client.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/mizzao_user-status/0.6.7/web.browser/monitor.coffee" />
         <item url="file://$USER_HOME$/.meteor/packages/modern-browsers/0.1.1/web.browser/modern-tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modern-browsers/0.1.1/web.browser/modern.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules-runtime/0.10.0/web.browser/.npm/package/node_modules/install/install.js" />
@@ -359,6 +361,8 @@
       <root url="file://$USER_HOME$/.meteor/packages/minifier-css/1.3.1/web.browser/minifier-tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/minifier-css/1.3.1/web.browser/minifier.js" />
       <root url="file://$USER_HOME$/.meteor/packages/minifier-css/1.3.1/web.browser/urlrewriting-tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/mizzao_timesync/0.3.4/web.browser/timesync-client.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/mizzao_user-status/0.6.7/web.browser/monitor.coffee" />
       <root url="file://$USER_HOME$/.meteor/packages/modern-browsers/0.1.1/web.browser/modern-tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modern-browsers/0.1.1/web.browser/modern.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules-runtime/0.10.0/web.browser/.npm/package/node_modules/install/install.js" />
