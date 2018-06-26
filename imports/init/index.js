@@ -48,3 +48,14 @@ export const getChatRoomId=(user_id)=>
     }
 
 };
+
+export const handleLogin =(email,password)=>{
+    Meteor.loginWithAdminPassword(email, password, function (error) {
+        if(!error) {
+            // Success
+            console.log("login successfully")
+        } else {
+            console.log(error)
+        }
+    });
+}

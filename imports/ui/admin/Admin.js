@@ -5,7 +5,7 @@ import {MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import {Provider} from 'react-redux'
 import store from '../../store/index'
 import Login from './screens/login'
-
+import {Meteor} from 'meteor/meteor'
 
 const theme = createMuiTheme({
     palette: {
@@ -25,10 +25,24 @@ const theme = createMuiTheme({
 });
 
 export default class Admin extends Component {
+    state ={
+        isLogin:false
+    }
+    componentWillMount(){
+        Meteor.subscribe('Users',function () {
+
+            this.setState({isLogin:Roles.userIsInRole(Meteor.userId(),['admin'])})
+        }.bind(this))
+    }
+
     render() {
+
         return (
             <Provider store={store}>
-                <MiniDrawer/>
+                {
+                    this.state.isLogin?<MiniDrawer/>:<Login/>
+                }
+
             </Provider>
         );
     }

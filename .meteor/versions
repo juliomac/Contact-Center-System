@@ -13,6 +13,7 @@ blaze@2.3.2
 blaze-html-templates@1.1.2
 blaze-tools@1.0.10
 boilerplate-generator@1.5.0
+brewhk:accounts-admin-password@0.0.1
 caching-compiler@1.1.12
 caching-html-compiler@1.1.2
 callback-hook@1.1.0

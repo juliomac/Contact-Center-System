@@ -7,4 +7,5 @@ Meteor.startup(() => {
     if(!count_setting){
         Setting.insert({percentage_reply:80,auto_reply:true,createdAt:new Date(),updatedAt:new Date()})
     }
+
 })
