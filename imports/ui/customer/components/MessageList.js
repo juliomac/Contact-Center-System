@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Message from './Messages/index'
-import ChatRooms from '../../../lib/Database'
 class MessageList extends Component {
     constructor(props) {
         super(props);

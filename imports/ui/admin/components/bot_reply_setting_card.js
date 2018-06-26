@@ -33,7 +33,6 @@ const styles = {
 };
 const initialState={
     open:false,
-    pre_auto_reply:false,
     auto_reply:false,
     id_setting:''
 }
@@ -52,8 +51,8 @@ class BotReplySettingCard extends React.Component {
     setSetting(){
         Tracker.autorun(()=>{
             const setting = Setting.findOne()
-            const {auto_reply,_id} = setting
-            this.setState({auto_reply:auto_reply,id_setting:_id,pre_auto_reply:auto_reply});
+            const {auto_reply,_id} = setting;
+            this.setState({auto_reply:auto_reply,id_setting:_id});
         })
     }
 
@@ -63,23 +62,17 @@ class BotReplySettingCard extends React.Component {
     handleClickOpen = () => {
         this.setState({ open: true });
     };
-    onDecClick = () => {
-        this.setState({ percent: this.state.percent - 5 > 0 ? this.state.percent - 5 : 0 });
-    }
-
-    onInClick = () => {
-        this.setState({ percent: this.state.percent + 5 < 100 ? this.state.percent + 5 : 100 });
-    }
     onSave = (e) => {
+        console.log("Hello 1")
         console.log(e)
-        // this.setState({ open: false });
-        // const {percent,id_setting} = this.state
-        // Meteor.call('updatePercentage',id_setting,percent)
+        this.setState({auto_reply: e });
+        const {id_setting} = this.state;
+        Meteor.call('updateBotReplyStatus',id_setting,e)
     };
 
     render() {
         const { classes } = this.props;
-        const {open,auto_reply,pre_auto_reply} = this.state
+        const {open,auto_reply} = this.state
         return (
             <div className={classes.root}>
                 <Card className={classes.card}>
@@ -97,7 +90,9 @@ class BotReplySettingCard extends React.Component {
                         <Button onClick={this.handleClickOpen}>Edit</Button>
                     </CardActions>
                 </Card>
-                <BotReplyModal open={open} onClose={()=>this.setState({open:false,auto_reply:pre_auto_reply})} auto_reply={auto_reply}
+                <BotReplyModal open={open}
+                               onClose={()=>this.setState({open:false})}
+                               auto_reply={auto_reply}
                               onSave={(e)=>this.onSave(e)} />
             </div>
         )

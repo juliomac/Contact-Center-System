@@ -4,6 +4,9 @@ import MiniDrawer from './components/drawer'
 import {MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import {Provider} from 'react-redux'
 import store from '../../store/index'
+import Login from './screens/login'
+
+
 const theme = createMuiTheme({
     palette: {
         primary: {
@@ -25,9 +28,7 @@ export default class Admin extends Component {
     render() {
         return (
             <Provider store={store}>
-                <MuiThemeProvider theme={theme}>
-                        <MiniDrawer/>
-                </MuiThemeProvider>
+                <MiniDrawer/>
             </Provider>
         );
     }

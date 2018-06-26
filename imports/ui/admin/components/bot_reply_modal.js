@@ -38,12 +38,17 @@ class SetAutoReply extends React.Component {
         }
     }
 
-    handleChange = name => event => {
-        this.setState({ [name]: event.target.checked });
-    };
+    handleChange = name=>event => {
+        this.setState({ checkedA: event.target.checked });
+    }
+    componentWillReceiveProps(){
+     const {auto_reply} = this.props
+        this.setState({checkedA:auto_reply})
+    }
 
     render() {
-        const {open,onClose,onSave,auto_reply,classes} = this.props
+        const {open,onClose,onSave,classes} = this.props;
+        const {checkedA} = this.state
         return (
             <div>
                 <Dialog
@@ -60,7 +65,7 @@ class SetAutoReply extends React.Component {
                         <FormControlLabel
                             control={
                                 <Switch
-                                    checked={this.state.checkedA}
+                                    checked={checkedA}
                                     onChange={this.handleChange('checkedA')}
                                     value="checkedA"
                                     classes={{
@@ -77,7 +82,7 @@ class SetAutoReply extends React.Component {
                         <Button onClick={()=>onClose()} color="primary">
                             Cancel
                         </Button>
-                        <Button onClick={()=>{onSave(auto_reply),onClose()}} color="primary" autoFocus>
+                        <Button onClick={()=>{onSave(this.state.checkedA),onClose()}} color="primary" autoFocus>
                             Save
                         </Button>
                     </DialogActions>
