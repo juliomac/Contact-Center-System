@@ -9,7 +9,7 @@ import Customer from '../ui/customer/Customer'
 export const Main = () => (
 
     <div>
-        <Route exact path={"/"} component={Customer}/>
+        <Route exact path={"/chat/:data_company"} component={Customer}/>
         <Route exact path={"/admin"} component={Admin}/>
     </div>
 

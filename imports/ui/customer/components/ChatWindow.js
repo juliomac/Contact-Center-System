@@ -94,19 +94,10 @@ class ChatWindow extends Component {
         return (
 
             <div className={classList.join(' ')}>
-                <Header
-                    teamName={this.props.agentProfile.teamName}
-                    imageUrl={this.props.agentProfile.imageUrl}
-                    onClose={this.props.onClose}
-                />
                 {
                     isLogin?
                         <div className="sc-chat-window">
-                            <Header
-                                teamName={this.props.agentProfile.teamName}
-                                imageUrl={this.props.agentProfile.imageUrl}
-                                onClose={this.props.onClose}
-                            />
+
                             <MessageList
                                 messages={this.state.message_list}
                                 imageUrl={this.props.agentProfile.imageUrl}

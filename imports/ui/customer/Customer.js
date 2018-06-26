@@ -9,7 +9,7 @@ export default class Customer extends Component {
         this.state = {
             messageList: [],
             newMessagesCount: 0,
-            isOpen: false
+            isOpen: true
         };
     }
     _sendMessage(text) {
@@ -36,7 +36,9 @@ export default class Customer extends Component {
             newMessagesCount: 0
         })
     }
-
+    componentWillMount(){
+        console.log(this.props.match.params.data_company)
+    }
     render() {
         return <div>
             <Launcher
