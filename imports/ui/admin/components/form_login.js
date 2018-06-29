@@ -14,6 +14,8 @@ import Email from '@material-ui/icons/Email';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Typography from '@material-ui/core/Typography';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import {validateEmail} from "../../../init/validate";
+import {handleLogin} from "../../../init";
 
 const styles = theme => ({
     root: {
@@ -67,31 +69,35 @@ class FormLogin extends React.Component {
     handleClickShowPassword = () => {
         this.setState({ showPassword: !this.state.showPassword });
     };
+
+
     onSubmit(){
         const { email,password } = this.state;
         if(email&&password){
-            console.log(1)
-            if(this.validateEmail(email)&&this.validatePassword(password)){
+            if(validateEmail(email.trim())&&this.validatePassword(password.trim())){
                 this.setState({validate_email:true,validate_password:true});
+                console.log("success")
+                handleLogin(email, password)
+
             }else {
                 console.log("KKK:   "+password)
-                if(this.validateEmail(email)){
+                if(validateEmail(email.trim())){
                     this.setState({validate_email:true});
                 }else {
                     this.setState({validate_email:false,email_error_msg:'*Email is invalid'});
                 }
 
-                if(this.validatePassword(password)){
+                if(this.validatePassword(password.trim())){
                     this.setState({validate_password:true});
 
                 }else {
-                    this.setState({validate_password:false,password_error_msg:'*Minimum 8 digit'});
+                    this.setState({validate_password:false,password_error_msg:'*Minimum 8 digits'});
                 }
             }
         }else{
             console.log(2)
             if(email){
-                if(this.validateEmail(email)){
+                if(this.validateEmail(email.trim())){
                     this.setState({validate_email:true});
                 }else {
                     this.setState({validate_email:false,email_error_msg:'*Email is invalid'});
@@ -101,11 +107,11 @@ class FormLogin extends React.Component {
             }
 
             if(password){
-                if(this.validatePassword(password)){
+                if(this.validatePassword(password.trim())){
                     this.setState({validate_password:true});
 
                 }else {
-                    this.setState({validate_password:false,password_error_msg:'*Minimum 8 digit'});
+                    this.setState({validate_password:false,password_error_msg:'*Minimum 8 digits'});
                 }
             }else{
                 this.setState({validate_password:false,password_error_msg:'*Required'});
@@ -114,20 +120,15 @@ class FormLogin extends React.Component {
 
     }
 
-    validateEmail(email) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
-    }
     validatePassword(password) {
         console.log(password)
-        if(parseInt(password.toString().length)>7)
+        if(password.toString().length>7)
             return true;
         else return false;
     }
     render()
     {
         const { classes } = this.props;
-        console.log("JJ: "+this.state.password)
         return (
             <div>
                 <form className={classes.container} noValidate autoComplete="off">

@@ -4,6 +4,9 @@
   padding-bottom: 10px;
   display: flex;
 }
+.sc-message-list{
+  height: 100%;
+}
 
 .sc-message--content {
   width: 100%;
@@ -55,6 +58,5 @@
 
 @media (max-width: 450px) {
   .sc-message {
-    width: 80%;
   }
 }
