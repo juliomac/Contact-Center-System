@@ -42,7 +42,7 @@ class ListUser extends React.Component {
     }
     getInfoUserOnline(){
         Tracker.autorun(()=>{
-            const user_list =  Meteor.users.find({ "status.online": true },
+            const user_list =  Meteor.users.find({ "status.online": true,"roles":["user"]},
                 {fields:{_id:1,"emails":1,username:1,"profile.chatRoomId":1}}).fetch()
             console.log(user_list)
             this.formatField(user_list)

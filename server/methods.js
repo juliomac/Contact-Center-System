@@ -2,6 +2,7 @@ import {Meteor} from "meteor/meteor";
 import {ChatRoom, Setting} from "../lib/Database";
 import {getChatRoomId} from "../imports/init";
 import {default_message} from "../imports/data/message";
+import {Accounts} from "meteor/accounts-base";
 
 Meteor.methods({
     'check_existed'(email) {
@@ -55,5 +56,11 @@ Meteor.methods({
         Setting.update({_id:id},{$set:{auto_reply:auto_reply}})
         return true
     }
+});
 
+Meteor.methods({
+    'createAdmin'(admin_data) {
+        const user_id =Accounts.createUser(admin_data);
+        return user_id
+    }
 });

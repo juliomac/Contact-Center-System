@@ -1,1 +1,2 @@
 export const SWITCH_COMPONENT = "SWITCH_COMPONENT"
+export const LOGIN_STATUS = "LOGIN_STATUS"

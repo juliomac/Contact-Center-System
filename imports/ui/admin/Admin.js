@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import MiniDrawer from './components/drawer'
-import {MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import {Provider} from 'react-redux'
+import {loginStatus} from "../../action";
+import {MuiThemeProvider, createMuiTheme,withStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import {Provider,connect} from 'react-redux'
 import store from '../../store/index'
 import Login from './screens/login'
 import {Meteor} from 'meteor/meteor'
@@ -23,27 +25,55 @@ const theme = createMuiTheme({
         },
     },
 });
+const styles = theme => ({
+    progress: {
+        margin: "calc(50% - 20px)",
+    },
+});
+class Admin extends Component {
+    renderUI(status){
+        const {classes} = this.props
+        switch (status){
+            case "":
+                return <CircularProgress className={classes.progress} />
+            case false:
+                return <Login/>
+            case true:
+                return <MiniDrawer/>
 
-export default class Admin extends Component {
+
+        }
+    }
     state ={
-        isLogin:false
+        isLogin:""
     }
     componentWillMount(){
+        const {loginStatus} = this.props
         Meteor.subscribe('Users',function () {
-
-            this.setState({isLogin:Roles.userIsInRole(Meteor.userId(),['admin'])})
+            loginStatus(Roles.userIsInRole(Meteor.userId(),['admin']))
         }.bind(this))
     }
 
     render() {
+        const {login_status} = this.props
 
         return (
-            <Provider store={store}>
-                {
-                    this.state.isLogin?<MiniDrawer/>:<Login/>
-                }
+                <div>
+                    {this.renderUI(login_status)}
+                </div>
 
-            </Provider>
         );
     }
 }
+const mapDispatchToProps=dispatch=>{
+    return{
+        loginStatus:status=>(dispatch(loginStatus(status)))
+    }
+}
+const mapStateToProps =state=>{
+    return {
+        login_status:state.login_status
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(withStyles(styles)(Admin));

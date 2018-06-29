@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {connect} from 'react-redux'
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import './css/form_login.css'
@@ -16,6 +16,7 @@ import Typography from '@material-ui/core/Typography';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import {validateEmail} from "../../../init/validate";
 import {handleLogin} from "../../../init";
+import {loginStatus} from "../../../action";
 
 const styles = theme => ({
     root: {
@@ -73,11 +74,14 @@ class FormLogin extends React.Component {
 
     onSubmit(){
         const { email,password } = this.state;
+        const {loginStatus} = this.props
         if(email&&password){
             if(validateEmail(email)&&this.validatePassword(password)){
                 this.setState({validate_email:true,validate_password:true});
                 console.log("success")
-                handleLogin(email, password)
+                handleLogin(email, password,function (status) {
+                   loginStatus(status)
+                })
 
             }else {
                 console.log("KKK:   "+password)
@@ -192,9 +196,11 @@ class FormLogin extends React.Component {
         );
     }
 }
+const mapDispatchToProps=dispatch=>{
+    return{
+        loginStatus:status=>(dispatch(loginStatus(status)))
+    }
+}
 
-FormLogin.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles)(FormLogin);
+export default connect(null,mapDispatchToProps)(withStyles(styles)(FormLogin));
