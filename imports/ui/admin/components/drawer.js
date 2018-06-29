@@ -91,7 +91,7 @@ const styles = theme => ({
     },
     logout_btn:{
         position:'absolute',
-        right:0,
+        right:10,
     }
 
 });
