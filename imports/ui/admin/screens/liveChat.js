@@ -5,13 +5,12 @@ import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 import { Scrollbars } from 'react-custom-scrollbars';
-import InputMessage from '../components/input_message'
-import MessagesList from '../components/messages_list'
-import ListUser from '../components/livechat_users_list'
-import {message_list} from '../../../data/message_list_test_data';
+import InputMessage from '../components/input_message';
+import MessagesList from '../components/messages_list';
+import ListUser from '../components/livechat_users_list';
 import {ChatRoom} from "../../../../lib/Database";
-import {Meteor} from 'meteor/meteor'
-import {Tracker} from 'meteor/tracker'
+import {Meteor} from 'meteor/meteor';
+import {Tracker} from 'meteor/tracker';
 const drawerWidth = 240;
 Meteor.subscribe('ChatRooms')
 const styles = theme => ({

@@ -56,7 +56,7 @@ class EditPhoneNumberModal extends React.Component {
 
     onSumit(){
         const {phone_number} = this.state;
-        if (this.validatePhoneNumberInput(phone_number.trim())){
+        if (this.validatePhoneNumberInput(phone_number)){
             //Update data to DB
             return true;
         }else return false;
@@ -65,6 +65,7 @@ class EditPhoneNumberModal extends React.Component {
 
     validatePhoneNumberInput(phone_number) {
         if(phone_number){
+            phone_number=phone_number.trim();
             if(phone_number.toString().length<8){
                 this.setState({validate_phone_number:false,phone_number_error_msg:'*Minimum 8 digits'})
                 return false;

@@ -2,6 +2,7 @@ import {Meteor} from "meteor/meteor";
 import {ChatRoom, Setting} from "../lib/Database";
 import {getChatRoomId} from "../imports/init";
 import {default_message} from "../imports/data/message";
+import { HTTP } from 'meteor/http'
 
 Meteor.methods({
     'check_existed'(email) {
@@ -36,8 +37,7 @@ Meteor.methods({
 
 Meteor.methods({
     'insertMessage'(room_id,message) {
-        ChatRoom.update({_id:room_id},
-            {$addToSet:{message_user:message}});
+        ChatRoom.update({_id:room_id}, {$addToSet:{message_user:message}});
     }
 });
 

@@ -13,7 +13,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Drawer_List from './drawer_list';
 import LiveChat from '../screens/liveChat'
-import NotificationList from '../screens/notification'
+import NotificationList from '../screens/notification';
+import ManageAdmins from '../screens/manage_admin'
 import {connect} from 'react-redux'
 import Setting from '../screens/setting'
 import DashBoard from '../screens/dashboard'
@@ -121,6 +122,8 @@ class MiniDrawer extends React.Component {
                 return <NotificationList/>
             case 4:
                 return <Setting/>
+            case 5:
+                return <ManageAdmins/>
             default:
                 return <DashBoard/>
         }

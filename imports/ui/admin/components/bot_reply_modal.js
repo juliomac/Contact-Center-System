@@ -10,7 +10,7 @@ import Switch from '@material-ui/core/Switch';
 import {withStyles} from "@material-ui/core/styles/index";
 import PropTypes from 'prop-types';
 import './css/set_auto_reply.css'
-import purple from '@material-ui/core/colors/purple';
+import purple from '@material-ui/core/colors/deepPurple';
 
 
 const styles = {

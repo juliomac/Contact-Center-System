@@ -54,7 +54,7 @@ class EditEmailModal extends React.Component {
 
     onSumit(){
         const {email} = this.state;
-        if (this.validateEmailInput(email.trim())){
+        if (this.validateEmailInput(email)){
             //Update data to DB
             return true;
         }else return false;
@@ -63,7 +63,7 @@ class EditEmailModal extends React.Component {
 
     validateEmailInput(email) {
         if(email){
-            if(validateEmail(email)){
+            if(validateEmail(email.trim())){
                 this.setState({validate_email:true})
                 return true;
             }

@@ -9,6 +9,7 @@ import Settings from '@material-ui/icons/Settings';
 import Notifications from '@material-ui/icons/Notifications';
 import DeveloperBoard from '@material-ui/icons/DeveloperBoard';
 import TrackChanges from '@material-ui/icons/TrackChanges';
+import ManageUser from '@material-ui/icons/Group';
 import Badge from '@material-ui/core/Badge';
 import {connect} from 'react-redux'
 import {switchComponent} from "../../../action/index";
@@ -21,7 +22,7 @@ const styles = theme => ({
 
     },
     colorPrimary:{
-        backgroundColor:'rgb(30, 192, 255) !important',
+        backgroundColor:'#3f51b5 !important',
     },
     navDrawer:{
         paddingTop: 0,
@@ -83,6 +84,16 @@ class Drawer_List extends React.Component {
                         <ListItemText primary={
                             <p className={switch_component === 4?classes.icon_text:null}>
                                 Setting
+                            </p>
+                        }/>
+                    </ListItem>
+                    <ListItem button onClick={()=>{switchComponent(5)}} className={switch_component === 5?classes.colorPrimary:null}>
+                        <ListItemIcon>
+                            <ManageUser className={switch_component === 5?classes.icon_text:null}/>
+                        </ListItemIcon>
+                        <ListItemText primary={
+                            <p className={switch_component === 5?classes.icon_text:null}>
+                                Manage Admin
                             </p>
                         }/>
                     </ListItem>

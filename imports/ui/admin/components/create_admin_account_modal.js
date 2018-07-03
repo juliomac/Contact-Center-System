@@ -79,14 +79,17 @@ class ChangePasswordModal extends React.Component {
         var status_current_pw=false;
         var status_pw=false;
         var status__confirm_pw=false;
-        if (this.validatePassword(password)) status_pw=true;
-        if (this.validateCurrentPassword(current_pw)) status_current_pw=true;
-        if (this.confirmNewPassword(password,confirm_new_pw)) status__confirm_pw=true;
+        if (this.validatePassword(password.trim())) status_pw=true;
+        if (this.validateCurrentPassword(current_pw.trim())) status_current_pw=true;
+        if (this.confirmNewPassword(password,confirm_new_pw.trim())) status__confirm_pw=true;
 
         if(status_current_pw&&status_pw&&status__confirm_pw){
             //Update data to DB
             return true;
-        }else return false;
+        }else {
+            console.log('Hello false')
+            return false;
+        }
 
     }
 
@@ -94,7 +97,7 @@ class ChangePasswordModal extends React.Component {
         console.log('validate Password');
         console.log(password)
         if(password){
-            if(password.trim().toString().length>7){
+            if(password.toString().length>7){
                 this.setState({validate_password:true})
                 return true;
             }
@@ -114,7 +117,7 @@ class ChangePasswordModal extends React.Component {
         console.log(password)
 
         if(password){
-            if(password.trim().toString().length>7){
+            if(password.toString().length>7){
                 this.setState({validate_current_pw:true})
                 return true;
             }
@@ -134,7 +137,7 @@ class ChangePasswordModal extends React.Component {
         console.log(password)
         console.log(confirm_new_pw)
         if(confirm_new_pw){
-            if(password.trim()==confirm_new_pw.trim()){
+            if(password==confirm_new_pw){
                 this.setState({validate_confirm_pw:true});
                 return true;
             }

@@ -63,8 +63,8 @@ class AutoReplyCard extends React.Component {
                             status="error"
                             theme={{
                                 error: {
-                                    symbol: [user_online,<br/>,<span style={{fontSize:15,marginLeft:10,color:'#1ec0ff'}}>active</span>],
-                                    color: '#47b8e0'
+                                    symbol: [user_online,<br/>,<span style={{fontSize:15,marginLeft:10,color:'#3f51b5'}}>active</span>],
+                                    color: '#3f51b5'
                                 }
                             }}
                         />

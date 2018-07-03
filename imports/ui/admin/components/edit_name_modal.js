@@ -53,7 +53,7 @@ class EditNameModal extends React.Component {
 
     onSumit(){
         const {name} = this.state;
-        if (this.validateNameInput(name.trim())){
+        if (this.validateNameInput(name)){
             //Update data to DB
             return true;
         }else return false;
@@ -62,6 +62,7 @@ class EditNameModal extends React.Component {
 
     validateNameInput(name) {
         if(name){
+            name=name.trim();
             if(name.toString().length<3){
                 this.setState({validate_name:false,name_error_msg:'*Minimum 3 digits'})
                 return false;
