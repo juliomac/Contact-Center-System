@@ -47,7 +47,6 @@ Meteor.methods({
     'updatePercentage'(id,percentage) {
         Setting.update({_id:id},{$set:{percentage_reply:percentage}})
         return true
-
     }
 });
 Meteor.methods({
@@ -63,4 +62,48 @@ Meteor.methods({
         const user_id =Accounts.createUser(admin_data);
         return user_id
     }
+
 });
+
+/*---------------------------- update user ---------------------*/
+
+Meteor.methods({
+    'updateEmail'(email) {
+        console.log(Meteor.userId())
+        Meteor.users.update({
+                _id: Meteor.userId()
+            },
+            {
+                $set: {
+                    'emails.0.address': email,
+                }
+            });
+    }
+});
+Meteor.methods({
+    'updateUsername'(username) {
+        Meteor.users.update({
+                _id: Meteor.userId()
+            },
+            {
+                $set: {
+                    'username': username,
+                }
+            });
+    }
+});
+
+Meteor.methods({
+    'updatePhoneNumber'(phone_number) {
+        Meteor.users.update({
+                _id: Meteor.userId()
+            },
+            {
+                $set: {
+                    'profile.phone_number': phone_number,
+                }
+            });
+    }
+});
+
+

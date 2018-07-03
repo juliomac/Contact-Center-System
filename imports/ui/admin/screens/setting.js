@@ -4,8 +4,11 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
-import AutoReplyCard from '../components/auto_reply_card'
-import BotAutoReplyCard from '../components/bot_reply_setting_card'
+import AutoReplyCard from '../components/auto_reply_card';
+import BotAutoReplyCard from '../components/bot_reply_setting_card';
+import UserInfoCard from '../components/user_info_setting_card'
+
+
 const styles = {
     root:{
       margin:'5%'
@@ -40,6 +43,9 @@ function Setting(props) {
                     </Grid>
                     <Grid item xs={12} sm={3} style={{maxWidth:600}}>
                         <BotAutoReplyCard/>
+                    </Grid>
+                    <Grid item xs={12} sm={4} style={{maxWidth:620}}>
+                        <UserInfoCard/>
                     </Grid>
                 </Grid>
             </div>

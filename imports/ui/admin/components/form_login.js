@@ -76,7 +76,7 @@ class FormLogin extends React.Component {
         const { email,password } = this.state;
         const {loginStatus} = this.props
         if(email&&password){
-            if(validateEmail(email)&&this.validatePassword(password)){
+            if(validateEmail(email.trim())&&this.validatePassword(password.trim())){
                 this.setState({validate_email:true,validate_password:true});
                 console.log("success")
                 handleLogin(email, password,function (status) {
@@ -85,23 +85,23 @@ class FormLogin extends React.Component {
 
             }else {
                 console.log("KKK:   "+password)
-                if(validateEmail(email)){
+                if(validateEmail(email.trim())){
                     this.setState({validate_email:true});
                 }else {
                     this.setState({validate_email:false,email_error_msg:'*Email is invalid'});
                 }
 
-                if(this.validatePassword(password)){
+                if(this.validatePassword(password.trim())){
                     this.setState({validate_password:true});
 
                 }else {
-                    this.setState({validate_password:false,password_error_msg:'*Minimum 8 digit'});
+                    this.setState({validate_password:false,password_error_msg:'*Minimum 8 digits'});
                 }
             }
         }else{
             console.log(2)
             if(email){
-                if(this.validateEmail(email)){
+                if(this.validateEmail(email.trim())){
                     this.setState({validate_email:true});
                 }else {
                     this.setState({validate_email:false,email_error_msg:'*Email is invalid'});
@@ -111,11 +111,11 @@ class FormLogin extends React.Component {
             }
 
             if(password){
-                if(this.validatePassword(password)){
+                if(this.validatePassword(password.trim())){
                     this.setState({validate_password:true});
 
                 }else {
-                    this.setState({validate_password:false,password_error_msg:'*Minimum 8 digit'});
+                    this.setState({validate_password:false,password_error_msg:'*Minimum 8 digits'});
                 }
             }else{
                 this.setState({validate_password:false,password_error_msg:'*Required'});
@@ -133,7 +133,6 @@ class FormLogin extends React.Component {
     render()
     {
         const { classes } = this.props;
-        console.log("JJ: "+this.state.password)
         return (
             <div>
                 <form className={classes.container} noValidate autoComplete="off">

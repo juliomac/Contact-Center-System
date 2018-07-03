@@ -17,6 +17,7 @@ import NotificationList from '../screens/notification'
 import {connect} from 'react-redux'
 import Setting from '../screens/setting'
 import DashBoard from '../screens/dashboard'
+import Button from '@material-ui/core/Button';
 
 
 const drawerWidth = 240;
@@ -88,6 +89,10 @@ const styles = theme => ({
         marginLeft: 12,
         marginRight: 20,
     },
+    logout_btn:{
+        position:'absolute',
+        right:10,
+    }
 
 });
 
@@ -142,6 +147,7 @@ class MiniDrawer extends React.Component {
                         <Typography variant="title" color="inherit" noWrap>
                             Contact Center
                         </Typography>
+                        <Button color="inherit" className={classes.logout_btn}>Logout</Button>
                     </Toolbar>
                 </AppBar>
                 <Drawer

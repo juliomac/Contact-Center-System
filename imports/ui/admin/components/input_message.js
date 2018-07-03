@@ -66,23 +66,23 @@ class InputMessage extends React.Component {
         const {message} = this.state
         return <div className={classes.root1}>
             <form>
-            <TextField
-                id="multiline-flexible"
-                disableUnderline={true}
-                multiline
-                rows="2"
-                placeholder="Type your message..."
-                value={message}
-                className={classes.input}
-                onChange={this.handleChange('multiline')}
-                endAdornment={
-                    <InputAdornment position="end">
-                        <IconButton onClick={()=>this.submitReply()} className={classes.button} aria-label="Delete">
-                            <Send />
-                        </IconButton>
-                    </InputAdornment>
-                }
-            />
+                <TextField
+                    id="multiline-flexible"
+                    disableUnderline={true}
+                    multiline
+                    rows="2"
+                    placeholder="Type your message..."
+                    value={message}
+                    className={classes.input}
+                    onChange={this.handleChange('multiline')}
+                    endAdornment={
+                        <InputAdornment position="end">
+                            <IconButton onClick={()=>this.submitReply()} className={classes.button} aria-label="Delete">
+                                <Send />
+                            </IconButton>
+                        </InputAdornment>
+                    }
+                />
             </form>
         </div>;
     }
