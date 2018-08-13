@@ -5,6 +5,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import Domain from '@material-ui/icons/Domain'
 import Settings from '@material-ui/icons/Settings';
 import Notifications from '@material-ui/icons/Notifications';
 import DeveloperBoard from '@material-ui/icons/DeveloperBoard';
@@ -45,44 +46,58 @@ class Drawer_List extends React.Component {
                     <ListItem button onClick={()=>{switchComponent(1)}}
                               className={switch_component ===1?classes.colorPrimary:null}>
                         <ListItemIcon>
-                            <DeveloperBoard className={switch_component === 1?classes.icon_text:null}/>
+                            <Domain className={switch_component === 1?classes.icon_text:null}/>
                         </ListItemIcon>
                         <ListItemText primary={
                             <p className={switch_component === 1?classes.icon_text:null}>
+                                Domain
+                            </p>
+                        }/>
+                    </ListItem>
+                    <ListItem button onClick={()=>{switchComponent(2)}}
+                              className={switch_component ===2?classes.colorPrimary:null}>
+                        <ListItemIcon>
+                            <DeveloperBoard className={switch_component === 2?classes.icon_text:null}/>
+                        </ListItemIcon>
+                        <ListItemText primary={
+                            <p className={switch_component === 2?classes.icon_text:null}>
                                 Dashboard
                             </p>
                         }/>
                     </ListItem>
-                    <ListItem button onClick={()=>{switchComponent(2)}} className={switch_component === 2?classes.colorPrimary:null}>
+                    <ListItem button onClick={()=>{switchComponent(3)}}
+                              className={switch_component === 3?classes.colorPrimary:null}>
                         <ListItemIcon>
                             <Badge className={classes.margin} badgeContent={8} color="secondary">
-                                <TrackChanges className={switch_component === 2?classes.icon_text:null}/>
-                            </Badge>
-                        </ListItemIcon>
-                        <ListItemText primary={
-                            <p className={switch_component === 2?classes.icon_text:null}>
-                                Live Chat
-                            </p>
-                        }/>
-                    </ListItem>
-                    <ListItem button onClick={()=>{switchComponent(3)}} className={switch_component === 3?classes.colorPrimary:null}>
-                        <ListItemIcon>
-                            <Badge className={classes.margin} badgeContent={10} color="secondary">
-                                <Notifications className={switch_component === 3?classes.icon_text:null}/>
+                                <TrackChanges className={switch_component === 3?classes.icon_text:null}/>
                             </Badge>
                         </ListItemIcon>
                         <ListItemText primary={
                             <p className={switch_component === 3?classes.icon_text:null}>
+                                Live Chat
+                            </p>
+                        }/>
+                    </ListItem>
+                    <ListItem button onClick={()=>{switchComponent(4)}}
+                              className={switch_component === 4?classes.colorPrimary:null}>
+                        <ListItemIcon>
+                            <Badge className={classes.margin} badgeContent={10} color="secondary">
+                                <Notifications className={switch_component === 4?classes.icon_text:null}/>
+                            </Badge>
+                        </ListItemIcon>
+                        <ListItemText primary={
+                            <p className={switch_component === 4?classes.icon_text:null}>
                                 Notification
                             </p>
                         }/>
                     </ListItem>
-                    <ListItem button onClick={()=>{switchComponent(4)}} className={switch_component === 4?classes.colorPrimary:null}>
+                    <ListItem button onClick={()=>{switchComponent(5)}}
+                              className={switch_component === 5?classes.colorPrimary:null}>
                         <ListItemIcon>
-                            <Settings className={switch_component === 4?classes.icon_text:null}/>
+                            <Settings className={switch_component === 5?classes.icon_text:null}/>
                         </ListItemIcon>
                         <ListItemText primary={
-                            <p className={switch_component === 4?classes.icon_text:null}>
+                            <p className={switch_component === 5?classes.icon_text:null}>
                                 Setting
                             </p>
                         }/>

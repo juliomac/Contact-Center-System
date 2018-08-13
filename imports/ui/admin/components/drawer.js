@@ -18,6 +18,7 @@ import ManageAdmins from '../screens/manage_admin'
 import {connect} from 'react-redux'
 import Setting from '../screens/setting'
 import DashBoard from '../screens/dashboard'
+import Domain from '../screens/domain'
 import Button from '@material-ui/core/Button';
 
 
@@ -115,12 +116,14 @@ class MiniDrawer extends React.Component {
         localStorage.setItem('initIndex',index)
         switch (index){
             case 1:
-                return <DashBoard/>
+                return <Domain/>
             case 2:
-                return <LiveChat/>
+                return <DashBoard/>
             case 3:
-                return <NotificationList/>
+                return <LiveChat/>
             case 4:
+                return <NotificationList/>
+            case 5:
                 return <Setting/>
             case 5:
                 return <ManageAdmins/>
