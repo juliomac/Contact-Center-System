@@ -5,9 +5,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {withStyles} from "@material-ui/core/styles/index";
-import PropTypes from 'prop-types';
-import './css/set_auto_reply.css'
-import './css/form_login.css'
+import {connect} from 'react-redux'
+import '../css/set_auto_reply.css'
+import '../css/form_login.css'
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -40,38 +40,37 @@ const styles = theme => ({
 class EditNameModal extends React.Component {
 
     state = {
-        name: "Mai Mom",
+        username_state: "Mai Mom",
         validate_name:true,
         name_error_msg:'*Required',
     };
 
-    handleChange = name => event => {
-        this.setState({
-            [name]: event.target.value,
-        });
-    };
 
-    onSumit(){
-        const {name} = this.state;
-        if (this.validateNameInput(name)){
-            //Update data to DB
-            return true;
-        }else return false;
+    onSubmit(){
+        const {username_state,validate_name} = this.state;
+        const {onClose} = this.props
+        if (validate_name){
+           Meteor.call('updateUsername',username_state,function (e) {
+               if(!e){
+                   onClose()
+               }
+           })
+        }
 
     }
 
-    validateNameInput(name) {
-        if(name){
-            name=name.trim();
-            if(name.toString().length<3){
+    validateNameInput(username) {
+        this.setState({username_state:username})
+        if(username.trim()){
+            if(username.toString().length<3){
                 this.setState({validate_name:false,name_error_msg:'*Minimum 3 digits'})
-                return false;
-            }else if(name.toString().length>30){
+
+            }else if(username.toString().length>30){
                 this.setState({validate_name:false,name_error_msg:'*Maximum 30 digits'})
-                return false;
+
             }else {
                 this.setState({validate_name:true})
-                return true;
+
             }
         }else{
             this.setState({validate_name:false,name_error_msg:'*Required'})
@@ -79,9 +78,18 @@ class EditNameModal extends React.Component {
         }
 
     }
+    initUsername(){
+        const{username} = this.props
+        console.log(this.props)
+        this.setState({username_state:username})
+    }
+    componentDidMount(){
+        this.initUsername()
+    }
 
     render() {
         const {open,onClose,onSave,classes} = this.props;
+        const {username_state} = this.state
         return (
             <div>
                 <Dialog
@@ -102,18 +110,18 @@ class EditNameModal extends React.Component {
                                 <Input
                                     id="name"
                                     type='text'
-                                    value={this.state.name}
-                                    onChange={this.handleChange('name')}
+                                    value={username_state}
+                                    onChange={(e)=>this.validateNameInput(e.target.value)}
                                 />
                                 <FormHelperText hidden={this.state.validate_name} error={true}>{this.state.name_error_msg}</FormHelperText>
                             </FormControl>
                         </form>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={()=>onClose()} color="primary">
+                        <Button onClick={()=>{onClose();this.initUsername()}} color="primary">
                             Cancel
                         </Button>
-                        <Button onClick={()=>{if(this.onSumit()) onClose()}} color="primary" autoFocus>
+                        <Button onClick={()=>{this.onSubmit()}} color="primary" autoFocus>
                             Save
                         </Button>
                     </DialogActions>
@@ -123,9 +131,13 @@ class EditNameModal extends React.Component {
     }
 }
 
-EditNameModal.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
+const mapStateToProps = (state=>{
+    return{
+        username:state.username
+    }
+})
 
 
-export default withStyles(styles)(EditNameModal);
+
+
+export default connect(mapStateToProps)(withStyles(styles)(EditNameModal));

@@ -37,7 +37,7 @@ class AutoReplyCard extends React.Component {
     }
     getCountUserOnline(){
         Tracker.autorun(()=>{
-            const count = Meteor.users.find({ "status.online": true }).count();
+            const count = Meteor.users.find({ "status.online": true,"roles":["user"] }).count();
             this.setState({user_online:count})
         })
     }

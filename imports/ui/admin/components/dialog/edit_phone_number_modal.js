@@ -5,17 +5,17 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {withStyles} from "@material-ui/core/styles/index";
+import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
-import './css/set_auto_reply.css'
-import './css/form_login.css'
+import '../css/set_auto_reply.css'
+import '../css/form_login.css'
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import classNames from 'classnames';
-
-
-
+import {formatPhoneNumber} from "../../../../init/format";
+import {regex_phone_number} from "../../../../constans/const";
 
 
 const styles = theme => ({
@@ -43,7 +43,7 @@ const styles = theme => ({
 class EditPhoneNumberModal extends React.Component {
 
     state = {
-        phone_number: "+855 967969927",
+        phone_number_state: "+855 967969927",
         validate_phone_number:true,
         phone_number_error_msg:'*Required',
     };
@@ -54,27 +54,36 @@ class EditPhoneNumberModal extends React.Component {
         });
     };
 
-    onSumit(){
-        const {phone_number} = this.state;
-        if (this.validatePhoneNumberInput(phone_number)){
-            //Update data to DB
-            return true;
-        }else return false;
+    onSubmit(){
+        const {phone_number_state,validate_phone_number} = this.state;
+        const {onClose} = this.props
+        if (validate_phone_number){
+           Meteor.call('updatePhoneNumber',formatPhoneNumber(phone_number_state),function (e) {
+               if(!e){
+                   onClose()
+               }
+           })
+        }
+
 
     }
 
     validatePhoneNumberInput(phone_number) {
-        if(phone_number){
-            phone_number=phone_number.trim();
-            if(phone_number.toString().length<8){
+
+        let valid_phone = phone_number
+
+        if(regex_phone_number.test(phone_number)){
+            this.setState({phone_number_state:valid_phone})
+        }
+        if(valid_phone.trim()){
+            if(valid_phone.length<8){
                 this.setState({validate_phone_number:false,phone_number_error_msg:'*Minimum 8 digits'})
-                return false;
-            }else if(phone_number.toString().length>9){
+
+            }else if(valid_phone.length>9){
                 this.setState({validate_phone_number:false,phone_number_error_msg:'*Maximum 9 digits'})
-                return false;
             }else {
                 this.setState({validate_phone_number:true})
-                return true;
+
             }
         }else{
             this.setState({validate_phone_number:false,phone_number_error_msg:'*Required'})
@@ -83,8 +92,17 @@ class EditPhoneNumberModal extends React.Component {
 
     }
 
+    initPhone(){
+        const{phone_number} = this.props
+        this.setState({phone_number_state:phone_number})
+    }
+    componentDidMount(){
+        this.initPhone()
+    }
+
     render() {
         const {open,onClose,onSave,classes} = this.props;
+        const {phone_number_state} = this.state
         return (
             <div>
                 <Dialog
@@ -94,7 +112,6 @@ class EditPhoneNumberModal extends React.Component {
                     aria-describedby="alert-dialog-description"
                     fullWidth={true}
                     maxWidth = {'xs'}
-
                 >
                     <DialogTitle id="alert-dialog-title">{"Update Account's Phone Number"}</DialogTitle>
                     <DialogContent>
@@ -105,22 +122,23 @@ class EditPhoneNumberModal extends React.Component {
                                 <Input
                                     id="phone_number"
                                     type='text'
-                                    value={this.state.phone_number}
-                                    onChange={this.handleChange('phone_number')}
+                                    value={phone_number_state}
+                                    onChange={(e)=>this.validatePhoneNumberInput(e.target.value)}
+                                    startAdornment={<InputAdornment position="start">+855</InputAdornment>}
                                 />
                                 <FormHelperText hidden={this.state.validate_phone_number} error={true}>
                                     {this.state.phone_number_error_msg}
                                     </FormHelperText>
                             </FormControl>
 
-                         
+
                         </form>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={()=>onClose()} color="primary">
+                        <Button onClick={()=>{onClose();this.initPhone()}} color="primary">
                             Cancel
                         </Button>
-                        <Button onClick={()=>{if(this.onSumit()) onClose()}} color="primary" autoFocus>
+                        <Button onClick={()=>{this.onSubmit()}} color="primary" autoFocus>
                             Save
                         </Button>
                     </DialogActions>
@@ -129,10 +147,10 @@ class EditPhoneNumberModal extends React.Component {
         );
     }
 }
+const mapStateToProps =(state)=>{
+    return{
+        phone_number:state.phone_number
+    }
+}
 
-EditPhoneNumberModal.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
-
-
-export default withStyles(styles)(EditPhoneNumberModal);
+export default connect(mapStateToProps)(withStyles(styles)(EditPhoneNumberModal));

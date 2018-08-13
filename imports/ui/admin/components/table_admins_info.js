@@ -16,13 +16,11 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 import CreateIcon from '@material-ui/icons/PersonAdd';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
-import Input from '@material-ui/core/Input';
-import CreateAdminAccount from './create_admin_account_modal';
-
-
-import list_user from './test';
+import CreateAdminAccountModal from './dialog/create_admin_account_modal';
+import EditAdminAccountModal from './dialog/edit_admin_account_modal'
 
 let counter = 0;
 function createData(name, email, phone_number, password, edit) {
@@ -100,6 +98,19 @@ const toolbarStyles = theme => ({
     spacer: {
         flex: '1 1 100%',
     },
+    oneHighight:
+        theme.palette.type === 'light'
+            ? {
+                color: '#3f51b5',
+                backgroundColor: 'rgb(171, 183, 249)',
+            }
+            : {
+                color: theme.palette.text.primary,
+                backgroundColor: theme.palette.secondary.dark,
+            },
+    spacer: {
+        flex: '1 1 100%',
+    },
     actions: {
         color: theme.palette.text.secondary,
     },
@@ -112,12 +123,13 @@ const toolbarStyles = theme => ({
 });
 
 let EnhancedTableToolbar = props => {
-    const { numSelected, classes,handleDeleteIconClick } = props;
+    const { numSelected, classes,handleDeleteIconClick,handleCreateIconClick, handleEditIconClick} = props;
 
     return (
         <Toolbar
             className={classNames(classes.root, {
-                [classes.highlight]: numSelected > 0,
+                [classes.oneHighight]: numSelected ==1,
+                [classes.highlight]: numSelected > 1,
             })}
         >
             <div className={classes.title}>
@@ -135,25 +147,29 @@ let EnhancedTableToolbar = props => {
             <div className={classes.actions}>
                 {numSelected > 0 ? (
                     <div className={classes.wrapperAction}>
+                        {numSelected==1 ? (
+                            <Tooltip title="Edit Account Info">
+                                <IconButton aria-label="Edit selected user"
+                                            onClick={(event)=>handleEditIconClick(event)}>
+                                    <EditIcon/>
+                                </IconButton>
+                            </Tooltip>
+                        ) :''}
+
                         <Tooltip title="Delete">
                             <IconButton aria-label="Delete"
                                         onClick={(event)=>handleDeleteIconClick(event)}>
                                 <DeleteIcon />
                             </IconButton>
                         </Tooltip>
-                        <Tooltip title="Create New User">
-                            <IconButton aria-label="Create-New-User"
-                                        onClick={(event)=>handleDeleteIconClick(event)}>
-                                <CreateIcon />
-                            </IconButton>
-                        </Tooltip>
+
                     </div>
 
                 ) : (
 
                         <Tooltip title="Create New User">
                             <IconButton aria-label="Create-New-User"
-                                        onClick={(event)=>handleDeleteIconClick(event)}>
+                                        onClick={(event)=>handleCreateIconClick(event)}>
                                 <CreateIcon />
                             </IconButton>
                         </Tooltip>
@@ -197,19 +213,14 @@ class EnhancedTable extends React.Component {
             selected: [],
             create_account_modal: false,
             edit_account_modal: false,
+            number_selected:0,
             data: [
                 createData('Mai Mom 1', 'maimom15@kit.edu.kh', '+855-967-969-926'),
                 createData('Mai Mom 2', 'maimom15@kit.edu.kh', '+855-967-969-926'),
                 createData('Mai Mom 3', 'maimom15@kit.edu.kh', '+855-967-969-926'),
                 createData('Mai Mom 4', 'maimom15@kit.edu.kh', '+855-967-969-926'),
                 createData('Mai Mom 5', 'maimom15@kit.edu.kh', '+855-967-969-926'),
-                createData('Mai Mom 6', 'maimom15@kit.edu.kh', '+855-967-969-926'),
-                createData('Mai Mom 7', 'maimom15@kit.edu.kh', '+855-967-969-926'),
-                createData('Mai Mom 8', 'maimom15@kit.edu.kh', '+855-967-969-926'),
-                createData('Mai Mom 9', 'maimom15@kit.edu.kh', '+855-967-969-926'),
-                createData('Mai Mom 10', 'maimom15@kit.edu.kh', '+855-967-969-926'),
-                createData('Mai Mom 11', 'maimom15@kit.edu.kh', '+855-967-969-926'),
-                createData('Mai Mom 12', 'maimom15@kit.edu.kh', '+855-967-969-926'),
+
             ],
             page: 0,
             rowsPerPage: 5,
@@ -224,10 +235,6 @@ class EnhancedTable extends React.Component {
         this.setState({ selected: [] });
     };
 
-    handleDeleteIconClick = (event) => {
-        console.log(event);
-        console.log(this.state.selected);
-    };
 
     handleClick = (event, id) => {
         console.log(id);
@@ -248,7 +255,7 @@ class EnhancedTable extends React.Component {
             );
         }
 
-        this.setState({ selected: newSelected });
+        this.setState({ selected: newSelected,number_selected: newSelected.length});
     };
 
     handleChangePage = (event, page) => {
@@ -272,12 +279,15 @@ class EnhancedTable extends React.Component {
 
     render() {
         const { classes } = this.props;
-        const { data, selected, rowsPerPage, page,create_account_modal } = this.state;
+        const { data, selected, rowsPerPage, page,create_account_modal,edit_account_modal } = this.state;
         const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
 
         return (
             <Paper className={classes.root}>
-                <EnhancedTableToolbar handleDeleteIconClick={()=>this.handleCreateAccountModal()} numSelected={selected.length} />
+                <EnhancedTableToolbar handleDeleteIconClick={()=>console.log("delete")}
+                                      numSelected={selected.length}
+                                      handleCreateIconClick={()=>this.handleCreateAccountModal()}
+                                      handleEditIconClick={()=>this.handleEditAccountModal()}/>
                 <div className={classes.tableWrapper}>
                     <Table className={classes.table} aria-labelledby="tableTitle">
                         <EnhancedTableHead
@@ -301,7 +311,7 @@ class EnhancedTable extends React.Component {
                                             selected={isSelected}
                                         >
                                             <TableCell padding="checkbox">
-                                                <Checkbox checked={isSelected} />
+                                                <Checkbox checked={isSelected} color={this.state.number_selected==1?'default':'secondary'}/>
                                             </TableCell>
                                             <TableCell component="th" scope="row" padding="none">
                                                 {n.name}
@@ -334,9 +344,12 @@ class EnhancedTable extends React.Component {
                     onChangePage={this.handleChangePage}
                     onChangeRowsPerPage={this.handleChangeRowsPerPage}
                 />
-                <CreateAdminAccount open={create_account_modal}
+                <CreateAdminAccountModal open={create_account_modal}
                                       onClose={()=>this.setState({create_account_modal:false})}
-                                      onSave={(e)=>console.log('save')}/>
+                                      onSave={()=>console.log('save')}/>
+                <EditAdminAccountModal open={edit_account_modal}
+                                         onClose={()=>this.setState({edit_account_modal:false})}
+                                         onSave={()=>console.log('save')}/>
             </Paper>
         );
     }

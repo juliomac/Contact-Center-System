@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import {connect} from 'react-redux'
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -8,10 +8,10 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
-import ChangePasswordModal from './change_password_modal';
-import EditEmailModal from './edit_email_modal';
-import EditNameModal from './edit_name_modal';
-import EditPhoneNumberModal from './edit_phone_number_modal'
+import ChangePasswordModal from './dialog/change_password_modal';
+import EditEmailModal from './dialog/edit_email_modal';
+import EditNameModal from './dialog/edit_name_modal';
+import EditPhoneNumberModal from './dialog/edit_phone_number_modal'
 import './css/auto_reply_card.css'
 import {Meteor} from 'meteor/meteor'
 import {Tracker} from 'meteor/tracker'
@@ -19,6 +19,8 @@ import {Setting} from "../../../../lib/Database";
 import Table from '@material-ui/core/Table';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
+import {emailAdmin, usernameAdmin,phoneAdmin} from "../../../action";
+
 
 const styles = {
     card: {
@@ -53,8 +55,9 @@ const styles = {
     }
 };
 const initialState={
-    name:'Mai Mom',
-    email:'maimom15@kit.edu.kh',
+    name:'',
+    email:'',
+    isUserLoaded:false,
     phone_number:'+855 967969927',
     open:false,
     password_modal_open:false,
@@ -66,13 +69,31 @@ const initialState={
 }
 class UserInfoSettingCard extends React.Component {
 
+
     constructor(props) {
         super(props)
         this.state = initialState;
     }
+    initUserInfo(){
+        const {usernameAdmin,emailAdmin,phoneAdmin} = this.props
+        const user_id =Meteor.userId()
+        Tracker.autorun(()=>{
+            const user = Meteor.users.findOne({_id:user_id},{fields:{username:1,"emails.address":1,"profile.phone_number":1}})
+            console.log(user)
+            usernameAdmin(user.username)
+            emailAdmin(user.emails[0].address)
+            phoneAdmin(user.profile.phone_number)
+            this.setState({isUserLoaded:true})
+        })
+
+
+    }
     componentWillMount(){
         Meteor.subscribe('setting',function () {
             this.setSetting()
+        }.bind(this))
+        Meteor.subscribe("Users",function () {
+            this.initUserInfo()
         }.bind(this))
     }
 
@@ -110,63 +131,92 @@ class UserInfoSettingCard extends React.Component {
     };
 
     render() {
-        const { classes } = this.props;
-        const {open,password_modal_open,name_modal_open, email_modal_open,
-                phone_modal_open,email, name,phone_number} = this.state
+        const { classes,username,email,phone_number } = this.props;
+        const {password_modal_open,name_modal_open, email_modal_open,
+                phone_modal_open,isUserLoaded} = this.state
+
+
         return (
+
             <div className={classes.root}>
-                <Card className={classes.card}>
-                    <CardContent>
-                        <Typography className={classes.title} color="textSecondary">
-                            General Account Setting
-                        </Typography>
-                        <Table className={classes.table}>
-                            <TableRow className={classes.table_row}>
-                                <TableCell className={classes.first_cell}>Name</TableCell>
-                                <TableCell>{name}</TableCell>
-                                <TableCell className={classes.last_cell}>
-                                    <Button onClick={this.editNameOpen} className={classes.right_btn}>Edit</Button>
-                                </TableCell>
-                            </TableRow>
-                            <TableRow className={classes.table_row}>
-                                <TableCell className={classes.first_cell}>Email</TableCell>
-                                <TableCell>{email}</TableCell>
-                                <TableCell className={classes.last_cell}>
-                                    <Button onClick={this.editEmailOpen} className={classes.right_btn}>Edit</Button>
-                                </TableCell>
-                            </TableRow>
-                            <TableRow className={classes.table_row}>
-                                <TableCell className={classes.first_cell}>Phone number</TableCell>
-                                <TableCell>{phone_number}</TableCell>
-                                <TableCell className={classes.last_cell}>
-                                    <Button onClick={this.editPhoneNumberOpen} className={classes.right_btn}>Edit</Button>
-                                </TableCell>
-                            </TableRow>
-                        </Table>
-                    </CardContent>
-                    <CardActions>
-                        <Button onClick={this.editPasswordOpen}>Edit Password</Button>
-                    </CardActions>
-                </Card>
-                <ChangePasswordModal open={password_modal_open}
-                                     onClose={()=>this.setState({password_modal_open:false})}
-                                     onSave={(e)=>this.onSave(e)} />
-                <EditEmailModal open={email_modal_open}
-                                onClose={()=>this.setState({email_modal_open:false})}
-                                onSave={(e)=>this.onSave(e)}/>
-                <EditNameModal open={name_modal_open}
-                                onClose={()=>this.setState({name_modal_open:false})}
-                                onSave={(e)=>this.onSave(e)}/>
-                <EditPhoneNumberModal open={phone_modal_open}
-                               onClose={()=>this.setState({phone_modal_open:false})}
-                               onSave={(e)=>this.onSave(e)}/>
+
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Typography className={classes.title} color="textSecondary">
+                                    General Account Setting
+                                </Typography>
+                                <Table className={classes.table}>
+                                    <TableRow className={classes.table_row}>
+                                        <TableCell className={classes.first_cell}>Name</TableCell>
+                                        <TableCell>{username}</TableCell>
+                                        <TableCell className={classes.last_cell}>
+                                            <Button onClick={this.editNameOpen} className={classes.right_btn}>Edit</Button>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow className={classes.table_row}>
+                                        <TableCell className={classes.first_cell}>Email</TableCell>
+                                        <TableCell>{email}</TableCell>
+                                        <TableCell className={classes.last_cell}>
+                                            <Button onClick={this.editEmailOpen} className={classes.right_btn}>Edit</Button>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow className={classes.table_row}>
+                                        <TableCell className={classes.first_cell}>Phone</TableCell>
+                                        <TableCell>{phone_number}</TableCell>
+                                        <TableCell className={classes.last_cell}>
+                                            <Button onClick={this.editPhoneNumberOpen} className={classes.right_btn}>Edit</Button>
+                                        </TableCell>
+                                    </TableRow>
+                                </Table>
+                            </CardContent>
+                            <CardActions>
+                                <Button onClick={this.editPasswordOpen}>Edit Password</Button>
+                            </CardActions>
+                        </Card>
+                {
+                    isUserLoaded? <div>
+                        <ChangePasswordModal open={password_modal_open}
+                                             onClose={()=>this.setState({password_modal_open:false})}
+                                             onSave={(e)=>this.onSave(e)} />
+                        <EditEmailModal open={email_modal_open}
+                                        onClose={()=>this.setState({email_modal_open:false})}
+                                        onSave={(e)=>this.onSave(e)}/>
+                        <EditNameModal open={name_modal_open}
+                                       onClose={()=>this.setState({name_modal_open:false})}
+                                       onSave={(e)=>this.onSave(e)}/>
+                        <EditPhoneNumberModal open={phone_modal_open}
+                                              onClose={()=>this.setState({phone_modal_open:false})}
+                                              onSave={(e)=>this.onSave(e)}/>
+                    </div>:
+                        <div></div>
+
+
+
+                }
+
+
+
+
+
             </div>
         )
     }
 }
-UserInfoSettingCard.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles)(UserInfoSettingCard);
+const mapDispatchToProps = (dispatch=>{
+    return {
+        usernameAdmin:username=>(dispatch(usernameAdmin(username))),
+        emailAdmin:email=>(dispatch(emailAdmin(email))),
+        phoneAdmin:phone_number=>(dispatch(phoneAdmin(phone_number)))
+    }
+})
+const mapStateToProps = (state=>{
+    return{
+        username:state.username,
+        email:state.email,
+        phone_number:state.phone_number
+    }
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(withStyles(styles)(UserInfoSettingCard));
 

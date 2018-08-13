@@ -6,8 +6,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {withStyles} from "@material-ui/core/styles/index";
 import PropTypes from 'prop-types';
-import './css/set_auto_reply.css'
-import './css/form_login.css'
+import '../css/set_auto_reply.css'
+import '../css/form_login.css'
 import IconButton from '@material-ui/core/IconButton';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -17,6 +17,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import classNames from 'classnames';
+import {connect} from 'react-redux'
 
 
 const styles = theme => ({
@@ -79,24 +80,21 @@ class ChangePasswordModal extends React.Component {
         var status_current_pw=false;
         var status_pw=false;
         var status__confirm_pw=false;
-        if (this.validatePassword(password.trim())) status_pw=true;
-        if (this.validateCurrentPassword(current_pw.trim())) status_current_pw=true;
-        if (this.confirmNewPassword(password,confirm_new_pw.trim())) status__confirm_pw=true;
+        if (this.validatePassword(password)) status_pw=true;
+        if (this.validateCurrentPassword(current_pw)) status_current_pw=true;
+        if (this.confirmNewPassword(password,confirm_new_pw)) status__confirm_pw=true;
 
         if(status_current_pw&&status_pw&&status__confirm_pw){
             //Update data to DB
             return true;
-        }else {
-            console.log('Hello false')
-            return false;
-        }
+        }else return false;
 
     }
 
     validatePassword(password) {
         console.log('validate Password');
         console.log(password)
-        if(password){
+        if(password.trim()){
             if(password.toString().length>7){
                 this.setState({validate_password:true})
                 return true;
@@ -116,7 +114,7 @@ class ChangePasswordModal extends React.Component {
         console.log('validate Current Password');
         console.log(password)
 
-        if(password){
+        if(password.trim()){
             if(password.toString().length>7){
                 this.setState({validate_current_pw:true})
                 return true;
@@ -133,11 +131,8 @@ class ChangePasswordModal extends React.Component {
     }
 
     confirmNewPassword(password,confirm_new_pw) {
-        console.log('validate confirm Password');
-        console.log(password)
-        console.log(confirm_new_pw)
         if(confirm_new_pw){
-            if(password==confirm_new_pw){
+            if(password.trim()==confirm_new_pw.trim()){
                 this.setState({validate_confirm_pw:true});
                 return true;
             }
@@ -253,6 +248,7 @@ class ChangePasswordModal extends React.Component {
         );
     }
 }
+
 
 ChangePasswordModal.propTypes = {
     classes: PropTypes.object.isRequired,

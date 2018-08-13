@@ -1,1 +1,6 @@
 export const SWITCH_COMPONENT = "SWITCH_COMPONENT"
+export const LOGIN_STATUS = "LOGIN_STATUS"
+export const EMAIL = "EMAIL"
+export const PASSWORD = "PASSWORD"
+export const USERNAME = "USERNAME"
+export const PHONE = "PHONE"
