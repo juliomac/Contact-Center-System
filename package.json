@@ -10,11 +10,13 @@
     "@material-ui/icons": "^1.0.0",
     "bcrypt": "^2.0.1",
     "meteor-node-stubs": "^0.3.2",
-    "react": "^16.3.2",
+    "react": "^16.4.0",
     "react-baron": "^3.0.0",
     "react-chat-bubble": "^0.8.7",
     "react-chat-elements": "^0.9.0",
     "react-custom-scrollbars": "^4.2.1",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.4.0",
+    "redux": "^4.0.0",
+    "video-react": "^0.10.9"
   }
 }
