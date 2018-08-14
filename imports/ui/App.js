@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { withTracker } from 'meteor/react-meteor-data';
 import {MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import ButtonAppBar from './components/app_bar'
@@ -21,14 +22,28 @@ const theme = createMuiTheme({
 });
 
 
+=======
+import {BrowserRouter as Router} from 'react-router-dom'
+import {Main} from "../routes";
+import store from '../store/index'
+import {Provider} from 'react-redux'
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
 export default class App extends Component {
 
     render() {
         return (
+<<<<<<< HEAD
             <MuiThemeProvider theme={theme}>
                 <ButtonAppBar/>
             </MuiThemeProvider>
 
+=======
+            <Provider store={store}>
+                <Router>
+                    <Main/>
+                </Router>
+            </Provider>
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         );
     }
 }

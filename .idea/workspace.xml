@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af9e9334-eab3-4923-8f66-0886af7c97f5" name="Default" comment="">
+<<<<<<< HEAD
       <change beforePath="" afterPath="$PROJECT_DIR$/imports/ui/screens/home.js" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -21,6 +22,32 @@
       <change beforePath="$PROJECT_DIR$/imports/ui/screens/setting.js" afterPath="$PROJECT_DIR$/imports/ui/components/app_bar.js" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+=======
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/imports/data/message_list_test_data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/components/css/livechat_users_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/components/css/livechat_users_list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/components/drawer_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/components/drawer_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/components/livechat_users_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/components/livechat_users_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/components/messages_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/components/messages_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/screens/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/screens/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/screens/liveChat.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/screens/liveChat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/screens/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/screens/setting.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.meteor/packages" beforeDir="false" afterPath="$PROJECT_DIR$/.meteor/packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.meteor/versions" beforeDir="false" afterPath="$PROJECT_DIR$/.meteor/versions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/App.js" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/lib/Database.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Database.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/imports/ui/components/set_auto_reply.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/components/set_auto_reply.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.js" afterDir="false" />
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,42 +61,194 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="47" lean-forward="false" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
               <folding />
+=======
+      <file leaf-file-name="liveChat.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/screens/liveChat.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="103" column="37" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#524#2317#0" />
+                <element signature="e#536#688#0" />
+              </folding>
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="app_bar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/components/app_bar.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="612">
               <caret line="36" column="6" lean-forward="false" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
               <folding />
+=======
+      <file leaf-file-name="livechat_users_list.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/components/livechat_users_list.js">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+=======
+            <state relative-caret-position="307">
+              <caret line="61" column="7" lean-forward="true" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="34" />
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/components/test.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="Database.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/Database.js">
+          <provider selected="true" editor-type-id="text-editor" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="messages_list.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/components/messages_list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+=======
+      <file leaf-file-name="Database.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Database.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="video_player.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/components/video_player.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="9" column="45" lean-forward="false" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
               <folding />
+=======
+      <file leaf-file-name="livechat_users_list.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/components/css/livechat_users_list.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+            </state>
+          </provider>
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+        </entry>
+      </file>
+      <file leaf-file-name="message_list_test_data.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/data/message_list_test_data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="25" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/data/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drawer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/components/drawer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="859">
+              <caret line="111" column="35" selection-start-line="111" selection-start-column="35" selection-end-line="111" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drawer_list.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/components/drawer_list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+=======
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="31" column="44" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="set_auto_reply.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/components/set_auto_reply.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="68" column="62" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="62" />
+=======
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
             </state>
           </provider>
         </entry>
@@ -98,7 +277,15 @@
       <find>icon_text</find>
       <find>FolderList</find>
       <find>drawerWidth</find>
+      <find>ListDividers</find>
+      <find>Scrollbars</find>
+      <find>Setting</find>
+      <find>active</find>
+      <find>open</find>
     </findStrings>
+    <replaceStrings>
+      <replace>switch_component</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -112,27 +299,31 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/imports/api/tasks.js" />
-        <option value="$PROJECT_DIR$/server/main.js" />
         <option value="$PROJECT_DIR$/imports/api/user_info.js" />
         <option value="$PROJECT_DIR$/lib/tasks.js" />
         <option value="$PROJECT_DIR$/imports/ui/Task.js" />
         <option value="$PROJECT_DIR$/imports/ui/button.js" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/imports/ui/components/app_bar.js" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         <option value="$PROJECT_DIR$/imports/ui/layout/layout.js" />
-        <option value="$PROJECT_DIR$/client/main.html" />
-        <option value="$PROJECT_DIR$/imports/ui/screens/notification.js" />
-        <option value="$PROJECT_DIR$/imports/ui/screens/setting.js" />
         <option value="$PROJECT_DIR$/imports/ui/screens/detailChate.js" />
         <option value="$PROJECT_DIR$/imports/ui/screens/detailNotification.js" />
-        <option value="$PROJECT_DIR$/imports/ui/screens/dashboard.js" />
         <option value="$PROJECT_DIR$/imports/ui/const/const.js" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/imports/ui/components/drawer_list.js" />
         <option value="$PROJECT_DIR$/client/main.css" />
         <option value="$PROJECT_DIR$/imports/ui/components/drawer.js" />
         <option value="$PROJECT_DIR$/imports/ui/components/list_chat_users.js" />
+=======
+        <option value="$PROJECT_DIR$/client/main.css" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         <option value="$PROJECT_DIR$/imports/ui/components/chat_list.js" />
         <option value="$PROJECT_DIR$/imports/ui/components/customer_drawer_list.js" />
         <option value="$PROJECT_DIR$/imports/ui/components/livechate_user_list.js" />
         <option value="$PROJECT_DIR$/imports/ui/components/css/messages_list.css" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/imports/ui/components/messages_list.js" />
         <option value="$PROJECT_DIR$/imports/ui/components/css/message_list.css" />
         <option value="$PROJECT_DIR$/imports/ui/screens/liveChat.js" />
@@ -145,6 +336,50 @@
         <option value="$PROJECT_DIR$/imports/ui/components/app_bar.js" />
         <option value="$PROJECT_DIR$/imports/ui/components/video_player.js" />
         <option value="$PROJECT_DIR$/imports/ui/App.js" />
+=======
+        <option value="$PROJECT_DIR$/imports/ui/components/css/message_list.css" />
+        <option value="$PROJECT_DIR$/client/main.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/list_chat_users.js" />
+        <option value="$PROJECT_DIR$/client/main.html" />
+        <option value="$PROJECT_DIR$/imports/ui/screens/live_chat_users_list.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/test.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/input_message.js" />
+        <option value="$PROJECT_DIR$/imports/data/index.js" />
+        <option value="$PROJECT_DIR$/imports/ui/screens/notification.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/test1.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/css/set_auto_reply.css" />
+        <option value="$PROJECT_DIR$/imports/constans/action_type.js" />
+        <option value="$PROJECT_DIR$/imports/store/index.js" />
+        <option value="$PROJECT_DIR$/imports/action/index.js" />
+        <option value="$PROJECT_DIR$/imports/init/index.js" />
+        <option value="$PROJECT_DIR$/imports/reducer/index.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/drawer.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/css/auto_reply_card.css" />
+        <option value="$PROJECT_DIR$/imports/ui/components/auto_reply_card.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/Dashboard_Notification.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/dashboard_notification.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/dashboard_card.js" />
+        <option value="$PROJECT_DIR$/imports/ui/screens/dashboard.js" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/imports/ui/screens/setting.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/livechat_users_list.js" />
+        <option value="$PROJECT_DIR$/imports/data/message_list_test_data.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/messages_list.js" />
+        <option value="$PROJECT_DIR$/imports/ui/screens/liveChat.js" />
+        <option value="$PROJECT_DIR$/imports/ui/App.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/drawer_list.js" />
+        <option value="$PROJECT_DIR$/imports/ui/components/css/livechat_users_list.css" />
+=======
+        <option value="$PROJECT_DIR$/imports/ui/components/set_auto_reply.js" />
+        <option value="$PROJECT_DIR$/server/main.js" />
+        <option value="$PROJECT_DIR$/.meteor/packages" />
+        <option value="$PROJECT_DIR$/imports/ui/App.js" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/lib/Database.js" />
+=======
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
       </list>
     </option>
   </component>
@@ -164,7 +399,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1366" />
     <option name="height" value="670" />
@@ -189,28 +424,54 @@
         <subPane>
           <expand>
             <path>
+<<<<<<< HEAD
               <item name="Tmout Studio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tmout Studio" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="Contact-Center-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Contact-Center-System" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Contact-Center-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Contact-Center-System" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
             </path>
             <path>
               <item name="Tmout Studio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tmout Studio" type="462c0819:PsiDirectoryNode" />
               <item name="imports" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+              <item name="init" type="462c0819:PsiDirectoryNode" />
+=======
+<<<<<<< HEAD
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
+            </path>
+            <path>
+              <item name="Tmout Studio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tmout Studio" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="init" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
             </path>
             <path>
               <item name="Tmout Studio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tmout Studio" type="462c0819:PsiDirectoryNode" />
               <item name="imports" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Tmout Studio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tmout Studio" type="462c0819:PsiDirectoryNode" />
-              <item name="imports" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
+<<<<<<< HEAD
               <item name="Tmout Studio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tmout Studio" type="462c0819:PsiDirectoryNode" />
               <item name="imports" type="462c0819:PsiDirectoryNode" />
@@ -220,9 +481,23 @@
             <path>
               <item name="Tmout Studio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tmout Studio" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="Contact-Center-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Contact-Center-System" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Contact-Center-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Contact-Center-System" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
               <item name="imports" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
             </path>
           </expand>
           <select />
@@ -380,14 +655,57 @@
       <workItem from="1527578581046" duration="2905000" />
       <workItem from="1527584558733" duration="3313000" />
       <workItem from="1527822823618" duration="771000" />
+<<<<<<< HEAD
       <workItem from="1527826702956" duration="485000" />
       <workItem from="1527828152311" duration="2136000" />
       <workItem from="1527830607298" duration="732000" />
       <workItem from="1527835997682" duration="13000" />
+=======
+      <workItem from="1527826702956" duration="694000" />
+      <workItem from="1527827954085" duration="59000" />
+      <workItem from="1527903586829" duration="1418000" />
+      <workItem from="1527905228686" duration="9657000" />
+      <workItem from="1527916627286" duration="606000" />
+      <workItem from="1528094379361" duration="2359000" />
+      <workItem from="1528699365819" duration="622000" />
+      <workItem from="1528707145559" duration="600000" />
+      <workItem from="1528766094178" duration="2000000" />
+      <workItem from="1528775327854" duration="756000" />
+      <workItem from="1528777707135" duration="134000" />
+      <workItem from="1528777937857" duration="1777000" />
+      <workItem from="1528780225768" duration="1348000" />
+      <workItem from="1528785856622" duration="2218000" />
+      <workItem from="1528859870457" duration="3051000" />
+      <workItem from="1528871798665" duration="4603000" />
+      <workItem from="1528894661838" duration="818000" />
+      <workItem from="1528938898708" duration="1689000" />
+      <workItem from="1528944217682" duration="4186000" />
+      <workItem from="1528950859002" duration="4979000" />
+      <workItem from="1528960460276" duration="1006000" />
+      <workItem from="1528962318583" duration="6650000" />
+      <workItem from="1529033422421" duration="2269000" />
+      <workItem from="1529038712280" duration="9168000" />
+      <workItem from="1529111973981" duration="6049000" />
+      <workItem from="1529119008760" duration="6241000" />
+      <workItem from="1529389457064" duration="139000" />
+      <workItem from="1529389622399" duration="719000" />
+<<<<<<< HEAD
+      <workItem from="1529391617741" duration="4566000" />
+      <workItem from="1529416528742" duration="5675000" />
+=======
+      <workItem from="1529392509035" duration="4537000" />
+<<<<<<< HEAD
+      <workItem from="1529408658098" duration="3796000" />
+=======
+      <workItem from="1529408658098" duration="2298000" />
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="99840000" />
   </component>
   <component name="ToolWindowManager">
@@ -415,6 +733,59 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="180622000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="182530000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1366" height="734" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1347729" />
+=======
+    <option name="totallyTimeSpent" value="179124000" />
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1366" height="670" extended-state="0" />
+    <editor active="true" />
+    <layout>
+<<<<<<< HEAD
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20520446" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20520446" />
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.33388704" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+<<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.31413612" />
+=======
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.17887564" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.31413612" />
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+      <window_info id="Favorites" order="3" side_tool="true" />
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,6 +799,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/imports/ui/components/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -441,18 +813,83 @@
         <state relative-caret-position="153">
           <caret line="9" column="45" lean-forward="false" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/client/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/Task.js" />
+    <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/app_bar.js" />
+    <entry file="file://$PROJECT_DIR$/imports/ui/Task.js" />
+    <entry file="file://$PROJECT_DIR$/imports/ui/button.js" />
+    <entry file="file://$PROJECT_DIR$/imports/ui/screens/detailNotification.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/screens/detailChate.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/layout/layout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        <state relative-caret-position="85">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/css/messages_list.css" />
+    <entry file="file://$PROJECT_DIR$/client/main.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/list_chat_users.js" />
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/livechate_user_list.js" />
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/customer_drawer_list.js" />
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/chat_list.js" />
+    <entry file="file://$PROJECT_DIR$/client/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/screens/live_chat_users_list.js" />
+    <entry file="file://$PROJECT_DIR$/imports/ui/const/const.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="13" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/css/message_list.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="391">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
@@ -467,90 +904,167 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1904">
           <caret line="112" column="25" lean-forward="false" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+=======
+        <state relative-caret-position="45">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.html">
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/input_message.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/screens/notification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="166" column="83" selection-start-line="166" selection-start-column="83" selection-end-line="166" selection-end-column="83" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/test1.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="85">
           <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+=======
+        <state>
+          <caret selection-end-line="9" selection-end-column="44" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.js">
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/css/set_auto_reply.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="51">
           <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+=======
+        <state relative-caret-position="30">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+    <entry file="file://$PROJECT_DIR$/imports/store/index.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="102">
           <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
           <folding />
+=======
+        <state relative-caret-position="60">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/Task.js" />
-    <entry file="file://$PROJECT_DIR$/lib/tasks.js">
+    <entry file="file://$PROJECT_DIR$/imports/action/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+        <state relative-caret-position="45">
+          <caret line="3" column="64" lean-forward="true" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.css">
+    <entry file="file:///usr/share/applications/chromium-browser.desktop" />
+    <entry file="file://$PROJECT_DIR$/imports/init/index.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1904">
           <caret line="112" column="25" lean-forward="false" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+=======
+        <state relative-caret-position="135">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks.js">
+    <entry file="file://$PROJECT_DIR$/imports/reducer/index.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="34">
           <caret line="2" column="45" lean-forward="false" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+=======
+        <state relative-caret-position="75">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.html">
+    <entry file="file://$PROJECT_DIR$/imports/constans/action_type.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="85">
           <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+=======
+        <state>
+          <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.js">
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/css/auto_reply_card.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="51">
           <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+=======
+        <state relative-caret-position="30">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/Task.js" />
-    <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/Dashboard_Notification.js" />
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/dashboard_livechat.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="153">
           <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
           <folding />
+=======
+        <state relative-caret-position="765">
+          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks.js">
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/dashboard_notification.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="34">
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+=======
+        <state relative-caret-position="555">
+          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/imports/ui/screens/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="480">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="68" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/imports/ui/Task.js" />
     <entry file="file://$PROJECT_DIR$/imports/ui/button.js" />
     <entry file="file://$PROJECT_DIR$/server/main.js">
@@ -635,8 +1149,183 @@
         <state relative-caret-position="51">
           <caret line="3" column="47" lean-forward="false" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/imports/ui/screens/setting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="52" column="21" lean-forward="true" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/auto_reply_card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="72" column="23" lean-forward="true" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#578#847#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/set_auto_reply.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="68" column="62" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/data/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state>
+          <caret selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/livechat_users_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="61" column="7" lean-forward="true" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/screens/liveChat.js">
+=======
+        <state relative-caret-position="315">
+          <caret line="21" column="6" lean-forward="true" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/dashboard_notification.js" />
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/dashboard_livechat.js">
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="103" column="37" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#524#2317#0" />
+            <element signature="e#536#688#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/data/message_list_test_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/messages_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+=======
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/set_auto_reply.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-494">
+          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/imports/ui/screens/dashboard.js">
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/drawer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="859">
+          <caret line="111" column="35" selection-start-line="111" selection-start-column="35" selection-end-line="111" selection-end-column="35" />
+=======
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+    <entry file="file://$PROJECT_DIR$/.meteor/packages">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="137">
+          <caret line="31" column="44" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+=======
+        <state relative-caret-position="90">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+>>>>>>> 1ad272e85d5ed235635657a8e919cc5b1fc9f4e4
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/screens/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/lib/Database.js">
+      <provider selected="true" editor-type-id="text-editor" />
+=======
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/drawer_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/components/css/livechat_users_list.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+>>>>>>> 86804b9ea54e27a43d9e8ecaac77015f8a34da8b
     </entry>
   </component>
 </project>

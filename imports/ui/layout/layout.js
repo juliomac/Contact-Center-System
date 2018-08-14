@@ -1,5 +1,5 @@
 import React from "react"
-import ButtonAppBar from "../components/app_bar"
+import ButtonAppBar from "../admin/components/app_bar"
 
 export default class Layout extends React.Component {
     render() {

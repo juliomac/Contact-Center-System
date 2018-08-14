@@ -8,15 +8,27 @@
     "@babel/runtime": "^7.0.0-beta.42",
     "@material-ui/core": "^1.0.0",
     "@material-ui/icons": "^1.0.0",
+    "axios": "^0.18.0",
     "bcrypt": "^2.0.1",
+    "dialogflow": "^0.5.0",
+    "google-translate-api": "^2.3.0",
     "meteor-node-stubs": "^0.3.2",
     "react": "^16.4.0",
     "react-baron": "^3.0.0",
     "react-chat-bubble": "^0.8.7",
     "react-chat-elements": "^0.9.0",
     "react-custom-scrollbars": "^4.2.1",
+<<<<<<< HEAD
     "react-dom": "^16.4.0",
     "redux": "^4.0.0",
     "video-react": "^0.10.9"
+=======
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-sweet-progress": "^1.1.0",
+    "react-swipeable-views": "^0.12.13",
+    "redux": "^4.0.0"
+>>>>>>> 98ac075450259ed508742c60f8aaa88019b9235d
   }
 }
